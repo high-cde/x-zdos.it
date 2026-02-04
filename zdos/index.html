@@ -2,149 +2,579 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>CloudX Portal – X‑ZDOS</title>
+  <title>ZDOS – Ecosistema & Roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --bg: #050509;
+      --panel: #0b0b11;
+      --accent: #00eaff;
+      --accent-soft: #00c7d6;
+      --text-main: #f5f5f5;
+      --text-soft: #a0a0b0;
+      --border-soft: #1b1b25;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: #000;
-      color: #e5e5e5;
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      overflow: hidden;
-    }
-
-    /* INTRO */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #000;
+      padding: 0;
+      background: radial-gradient(circle at top, #101020 0, #050509 45%, #000 100%);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 10;
-      animation: fadeOut 1s ease forwards;
-      animation-delay: 3.2s;
     }
 
-    #introText {
-      font-size: 22px;
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaff88;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #00eaff;
-      width: 0;
-      animation: typing 2.5s steps(30), blink 0.7s infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 260px; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
-    }
-
-    /* PORTALE */
-    #portal {
-      display: none;
-      height: 100vh;
+    .wrap {
       width: 100%;
-      background: #050505;
+      max-width: 1080px;
+      padding: 28px 18px 40px;
+    }
+
+    /* HEADER */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: radial-gradient(circle at 30% 20%, #00eaff, #004b66 60%, #000 100%);
+      box-shadow: 0 0 14px #00eaff88;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 0, transparent 40%, #ffffff33 50%, transparent 60%, transparent 100%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      animation: sweep 3.2s infinite;
+    }
+
+    @keyframes sweep {
+      0% { opacity: 0; transform: translateX(-80%); }
+      40% { opacity: 1; transform: translateX(20%); }
+      70% { opacity: 0; transform: translateX(120%); }
+      100% { opacity: 0; transform: translateX(120%); }
+    }
+
+    .brand-text {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      animation: fadeIn 1s ease forwards;
+      gap: 2px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    h1 {
-      font-size: 34px;
-      margin-bottom: 20px;
-      color: #00eaff;
-      text-shadow: 0 0 12px #00eaff66;
-      letter-spacing: 1px;
-    }
-
-    p {
-      opacity: 0.7;
-      margin-bottom: 40px;
+    .brand-title {
       font-size: 15px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
     }
 
-    .btn {
-      padding: 14px 32px;
-      font-size: 18px;
-      color: #050505;
-      background: #00eaff;
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .top-nav a {
+      font-size: 13px;
+      text-decoration: none;
+      color: var(--text-soft);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .top-nav a:hover {
+      border-color: #2a2a3a;
+      color: var(--accent);
+      background: #0b0b14;
+    }
+
+    .top-nav a.primary {
+      border-color: #00eaff55;
+      color: var(--accent);
+      background: #05050b;
+      box-shadow: 0 0 12px #00eaff44;
+    }
+
+    /* HERO */
+    .hero {
+      border-radius: 18px;
+      padding: 22px 20px 22px;
+      background: linear-gradient(135deg, #0b0b14 0, #050509 40%, #050509 100%);
+      border: 1px solid #151522;
+      box-shadow: 0 0 26px #000000aa;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, #00eaff22 0, transparent 55%),
+        radial-gradient(circle at 100% 0, #ff00ff11 0, transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-soft);
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      margin: 0 0 8px;
+      color: var(--text-main);
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #26263a;
+      color: var(--text-soft);
+      background: #05050b;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 10px 18px;
+      border-radius: 999px;
       border: none;
-      border-radius: 10px;
+      background: var(--accent);
+      color: #050509;
+      font-size: 14px;
+      font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 0 14px #00eaff88;
-      transition: 0.2s ease;
-      margin-bottom: 25px;
+      box-shadow: 0 0 16px #00eaff88;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.18s ease;
     }
 
-    .btn:hover {
-      background: #00c7d6;
+    .btn-primary:hover {
+      background: var(--accent-soft);
       box-shadow: 0 0 20px #00eaffaa;
     }
 
-    select {
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 8px;
-      background: #111;
-      color: #e5e5e5;
-      border: 1px solid #333;
-      margin-top: 10px;
+    .btn-ghost {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid #26263a;
+      background: #05050b;
+      color: var(--text-soft);
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.18s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: #3a3a55;
+      color: var(--accent);
+    }
+
+    /* GRID PRINCIPALE */
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 820px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 16px 18px;
+      box-shadow: 0 0 18px #000000aa;
+    }
+
+    .panel-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .panel-sub {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    /* ROADMAP */
+    .roadmap {
+      border-left: 1px solid #26263a;
+      padding-left: 14px;
+      margin-top: 6px;
+    }
+
+    .step {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px #00eaffaa;
+    }
+
+    .step-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-soft);
+      margin-bottom: 2px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* PROJECT MAP */
+    .project-map {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .node {
+      background: #080810;
+      border-radius: 12px;
+      border: 1px solid #26263a;
+      padding: 10px 10px 11px;
+      position: relative;
+      overflow: hidden;
+      transition: 0.18s ease;
+    }
+
+    .node::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, #00eaff22 0, transparent 55%);
+      opacity: 0;
+      transition: 0.18s ease;
+    }
+
+    .node:hover {
+      border-color: #00eaff66;
+      box-shadow: 0 0 14px #00eaff55;
+    }
+
+    .node:hover::after {
+      opacity: 1;
+    }
+
+    .node-title {
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .node-desc {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .node-pill {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #8f8fb0;
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER / NAV BASSO */
+    .footer {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-soft);
+      opacity: 0.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .footer-links a:hover {
+      border-color: #2a2a3a;
+      color: var(--accent);
+      background: #05050b;
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
 
-  <!-- INTRO -->
-  <div id="intro">
-    <div id="introText">BOOTING CLOUDX SYSTEM...</div>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">
+          <div class="brand-title">ZDOS</div>
+          <div class="brand-sub">Modulo dell’ecosistema X‑ZDOS</div>
+        </div>
+      </div>
+      <div class="top-nav">
+        <a href="https://x-zdos.it">CloudX Portal</a>
+        <a href="https://wallet.x-zdos.it" class="primary">DSN Wallet</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-label">Modulo ZDOS</div>
+        <h1 class="hero-title">Mappa dell’ecosistema & Roadmap ufficiale</h1>
+        <p class="hero-sub">
+          ZDOS è il layer di orchestrazione dell’intero circuito X‑ZDOS: un punto di controllo
+          che tiene insieme portale, wallet, moduli avanzati e future integrazioni.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">CloudX Portal</span>
+          <span class="tag">DSN Wallet</span>
+          <span class="tag">Roadmap modulare</span>
+          <span class="tag">Ecosistema in espansione</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://wallet.x-zdos.it">
+            Apri DSN Wallet
+          </a>
+          <a class="btn-ghost" href="https://x-zdos.it">
+            Torna al Portale CloudX
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID PRINCIPALE -->
+    <div class="grid">
+
+      <!-- ROADMAP -->
+      <section class="panel">
+        <div class="panel-title">Roadmap</div>
+        <div class="panel-sub">
+          Una progressione pensata per crescere senza frizione: dalle fondamenta visive ai moduli
+          operativi avanzati.
+        </div>
+
+        <div class="roadmap">
+
+          <div class="step">
+            <div class="step-label">Fase 1</div>
+            <div class="step-title">Fondamenta</div>
+            <div class="step-desc">
+              • Portale CloudX come entry point unico<br>
+              • DSN Wallet operativo su sottodominio dedicato<br>
+              • Identità visiva neon minimal coerente su tutto l’ecosistema
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-label">Fase 2</div>
+            <div class="step-title">Struttura ZDOS</div>
+            <div class="step-desc">
+              • Landing ZDOS con visione e mappa dei moduli<br>
+              • Roadmap pubblica e leggibile<br>
+              • Collegamenti chiari tra portale, wallet e ZDOS
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-label">Fase 3</div>
+            <div class="step-title">Moduli avanzati</div>
+            <div class="step-desc">
+              • Chart DSN live<br>
+              • Terminal CloudX per interazioni simboliche<br>
+              • Dashboard ZDOS per overview dell’ecosistema
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-label">Fase 4</div>
+            <div class="step-title">Ecosistema completo</div>
+            <div class="step-desc">
+              • Automazioni e API selettive<br>
+              • Integrazioni esterne mirate<br>
+              • Circuiti di accesso e livelli di profondità differenziati
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROJECT MAP -->
+      <section class="panel">
+        <div class="panel-title">Mappa dei progetti</div>
+        <div class="panel-sub">
+          Una vista sintetica dei moduli già attivi e di quelli in arrivo.
+        </div>
+
+        <div class="project-map">
+
+          <div class="node">
+            <div class="node-pill">Attivo</div>
+            <div class="node-title">CloudX Portal</div>
+            <div class="node-desc">
+              Entry point dell’ecosistema, accesso al circuito X‑ZDOS.
+            </div>
+          </div>
+
+          <div class="node">
+            <div class="node-pill">Attivo</div>
+            <div class="node-title">DSN Wallet</div>
+            <div class="node-desc">
+              Wallet ufficiale su <strong>wallet.x-zdos.it</strong>, ancorato al token DSN.
+            </div>
+          </div>
+
+          <div class="node">
+            <div class="node-pill">Attivo</div>
+            <div class="node-title">ZDOS Landing</div>
+            <div class="node-desc">
+              Questa pagina: visione, roadmap e mappa dei moduli.
+            </div>
+          </div>
+
+          <div class="node">
+            <div class="node-pill">In sviluppo</div>
+            <div class="node-title">Chart DSN</div>
+            <div class="node-desc">
+              Vista dedicata all’andamento del token DSN.
+            </div>
+          </div>
+
+          <div class="node">
+            <div class="node-pill">In sviluppo</div>
+            <div class="node-title">Terminal CloudX</div>
+            <div class="node-desc">
+              Interfaccia simbolica per comandi e circuiti nascosti.
+            </div>
+          </div>
+
+          <div class="node">
+            <div class="node-pill">Fase futura</div>
+            <div class="node-title">Dashboard ZDOS</div>
+            <div class="node-desc">
+              Overview dell’ecosistema, stato moduli e segnali chiave.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>ZDOS · Modulo dell’ecosistema X‑ZDOS · CloudX</div>
+      <div class="footer-links">
+        <a href="https://x-zdos.it">Portale</a>
+        <a href="https://wallet.x-zdos.it">Wallet</a>
+      </div>
+    </footer>
+
   </div>
-
-  <!-- PORTALE -->
-  <div id="portal">
-    <h1>CloudX Portal</h1>
-    <p>Accesso al circuito X‑ZDOS</p>
-
-    <a class="btn" href="https://wallet.x-zdos.it">
-      Entra nel DSN Wallet
-    </a>
-
-    <select onchange="if(this.value) window.location.href=this.value">
-      <option value="">Navigazione CloudX…</option>
-      <option value="https://wallet.x-zdos.it">DSN Wallet</option>
-      <option value="https://x-zdos.it">Home</option>
-      <option value="https://x-zdos.it/zdos">ZDOS</option>
-    </select>
-
-  </div>
-
-  <script>
-    setTimeout(() => {
-      document.getElementById("portal").style.display = "flex";
-    }, 3200);
-  </script>
-
 </body>
 </html>
