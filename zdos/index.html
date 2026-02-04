@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>CloudX Portal – X‑ZDOS</title>
+  <style>
+    body {
+      background: #000;
+      color: #e5e5e5;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* INTRO */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 10;
+      animation: fadeOut 1s ease forwards;
+      animation-delay: 3.2s;
+    }
+
+    #introText {
+      font-size: 22px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff88;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00eaff;
+      width: 0;
+      animation: typing 2.5s steps(30), blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 260px; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* PORTALE */
+    #portal {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      background: #050505;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 20px;
+      color: #00eaff;
+      text-shadow: 0 0 12px #00eaff66;
+      letter-spacing: 1px;
+    }
+
+    p {
+      opacity: 0.7;
+      margin-bottom: 40px;
+      font-size: 15px;
+    }
+
+    .btn {
+      padding: 14px 32px;
+      font-size: 18px;
+      color: #050505;
+      background: #00eaff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 14px #00eaff88;
+      transition: 0.2s ease;
+      margin-bottom: 25px;
+    }
+
+    .btn:hover {
+      background: #00c7d6;
+      box-shadow: 0 0 20px #00eaffaa;
+    }
+
+    select {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      background: #111;
+      color: #e5e5e5;
+      border: 1px solid #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INTRO -->
+  <div id="intro">
+    <div id="introText">BOOTING CLOUDX SYSTEM...</div>
+  </div>
+
+  <!-- PORTALE -->
+  <div id="portal">
+    <h1>CloudX Portal</h1>
+    <p>Accesso al circuito X‑ZDOS</p>
+
+    <a class="btn" href="https://wallet.x-zdos.it">
+      Entra nel DSN Wallet
+    </a>
+
+    <select onchange="if(this.value) window.location.href=this.value">
+      <option value="">Navigazione CloudX…</option>
+      <option value="https://wallet.x-zdos.it">DSN Wallet</option>
+      <option value="https://x-zdos.it">Home</option>
+      <option value="https://x-zdos.it/zdos">ZDOS</option>
+    </select>
+
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("portal").style.display = "flex";
+    }, 3200);
+  </script>
+
+</body>
+</html>
