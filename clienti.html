@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>CloudX × ZDOS — Soluzioni per Aziende</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #050711;
+      --bg-alt: #070a16;
+      --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.25);
+      --accent-strong: rgba(34, 211, 238, 0.7);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --card-border: rgba(148, 163, 184, 0.25);
+      --radius: 14px;
+      --shadow-soft: 0 0 24px rgba(15, 23, 42, 0.9);
+      --shadow-neon: 0 0 26px rgba(34, 211, 238, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    /* HEADER */
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #22d3ee, #0f172a);
+      box-shadow: var(--shadow-neon);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-logo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0, rgba(248, 250, 252, 0.4), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+    }
+
+    .brand-text-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-shadow: 0 0 12px rgba(34, 211, 238, 0.7);
+    }
+
+    .brand-text-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .header-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary {
+      border-color: var(--accent-soft);
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.25), rgba(15, 23, 42, 0.95));
+      box-shadow: var(--shadow-neon);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(15, 23, 42, 0.9);
+    }
+
+    .btn-primary:hover {
+      box-shadow: var(--shadow-neon);
+    }
+
+    /* HERO */
+
+    .hero {
+      margin-top: 26px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-main {
+      padding: 24px 22px;
+      border-radius: var(--radius);
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.18), rgba(15, 23, 42, 0.98));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 220deg, transparent 0, rgba(34, 211, 238, 0.18), transparent 40%);
+      opacity: 0.4;
+      mix-blend-mode: screen;
+      animation: spin 18s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-main-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+      text-shadow: 0 0 14px rgba(34, 211, 238, 0.7);
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--muted);
+      opacity: 0.9;
+    }
+
+    /* HERO SIDE: TERMINALE RZAI */
+
+    .hero-side {
+      border-radius: var(--radius);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+    }
+
+    .dot.red {
+      background: #f97373;
+    }
+
+    .dot.yellow {
+      background: #facc15;
+    }
+
+    .dot.green {
+      background: #4ade80;
+    }
+
+    .terminal-title {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .terminal-window {
+      border-radius: 10px;
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), #020617);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      box-shadow: var(--shadow-soft);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #output {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 11px;
+      line-height: 1.4;
+      min-height: 120px;
+      max-height: 180px;
+      overflow-y: auto;
+      padding: 8px;
+      border-radius: 8px;
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), #020617);
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
+      white-space: pre-wrap;
+    }
+
+    #input {
+      font-family: inherit;
+      font-size: 11px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text);
+      outline: none;
+      width: 100%;
+    }
+
+    #input::placeholder {
+      color: rgba(148, 163, 184, 0.8);
+    }
+
+    .terminal-hint {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* SEZIONI */
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* GRID MODULI */
+
+    .modules-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .module-card {
+      position: relative;
+      border-radius: var(--radius);
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 14px 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .module-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(34, 211, 238, 0.12), transparent 60%);
+      opacity: 0;
+      transition: 0.25s ease;
+      mix-blend-mode: screen;
+    }
+
+    .module-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-neon);
+      border-color: var(--accent-soft);
+    }
+
+    .module-card:hover::before {
+      opacity: 1;
+    }
+
+    .module-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .module-name {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .module-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .module-meta {
+      font-size: 11px;
+      color: rgba(148, 163, 184, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .module-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* SEZIONE VALORE */
+
+    .value-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .value-card {
+      border-radius: var(--radius);
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 14px 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .value-card h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .value-list {
+      margin: 8px 0 0;
+      padding-left: 16px;
+      font-size: 12px;
+    }
+
+    .value-list li {
+      margin-bottom: 4px;
+    }
+
+    /* CTA FINALE */
+
+    .cta-final {
+      margin-top: 40px;
+      border-radius: var(--radius);
+      background: radial-gradient(circle at top, rgba(34, 211, 238, 0.18), rgba(15, 23, 42, 0.98));
+      border: 1px solid var(--accent-soft);
+      box-shadow: var(--shadow-neon);
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cta-title {
+      font-size: 17px;
+    }
+
+    .cta-sub {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cta-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* TOAST */
+
+    .toast {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid var(--accent-soft);
+      color: var(--text);
+      font-size: 11px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-neon);
+      z-index: 50;
+    }
+
+    .toast-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(34, 211, 238, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <div>
+          <div class="brand-text-title">CloudX × ZDOS</div>
+          <div class="brand-text-sub">Ecosistema modulare per aziende, CRM e automazioni</div>
+        </div>
+      </div>
+      <div class="header-cta">
+        <button class="btn" id="btn-moduli">Vedi moduli</button>
+        <button class="btn btn-primary" id="btn-contatto">Richiedi una soluzione</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-main">
+        <div class="hero-main-inner">
+          <div class="hero-kicker">Soluzioni per aziende</div>
+          <h1 class="hero-title">
+            Trasformiamo i tuoi processi in un <span>ecosistema intelligente</span>.
+          </h1>
+          <p class="hero-sub">
+            CloudX × ZDOS unisce applicazioni personalizzate, automazioni, integrazioni e agenti AI
+            in un’unica piattaforma modulare, scalabile e brandizzata sulla tua azienda.
+          </p>
+
+          <div class="hero-tags">
+            <span class="tag">Bitrix24 Apps</span>
+            <span class="tag">Automazioni</span>
+            <span class="tag">Dashboard &amp; Portali</span>
+            <span class="tag">Agenti AI</span>
+            <span class="tag">Wallet &amp; Web3 Ready</span>
+          </div>
+
+          <p class="hero-footnote">
+            Non offriamo “un sito” o “un’app”. Costruiamo un ecosistema digitale che cresce con la tua azienda.
+          </p>
+        </div>
+      </div>
+
+      <!-- TERMINALE RZAI -->
+      <aside class="hero-side">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
+          <div class="terminal-title">RZAi‑pulciz · Terminale cliente</div>
+        </div>
+        <div class="terminal-window">
+          <div id="output">RZAi‑pulciz è online. Digita "help" per vedere cosa posso fare per la tua azienda.</div>
+          <input id="input" type="text" placeholder='Scrivi un comando (es. "help", "crm", "wallet")' />
+          <div class="terminal-hint">Invio per inviare · "clear" per pulire · "easter" per una sorpresa</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- MODULI -->
+    <section class="section" id="section-moduli">
+      <h2 class="section-title">Moduli xCLOUD per la tua azienda</h2>
+      <p class="section-sub">
+        Ogni modulo è indipendente, integrabile e pensato per risolvere problemi reali: CRM, automazioni,
+        portali, pagamenti, integrazioni e molto altro.
+      </p>
+
+      <div class="modules-grid">
+        <div class="module-card" data-module="nexus">
+          <div class="module-label">Core</div>
+          <div class="module-name">Nexus — Orchestrazione interna</div>
+          <div class="module-desc">
+            Coordina flussi, moduli e integrazioni. Perfetto per aziende con più reparti, sistemi e processi.
+          </div>
+          <div class="module-meta">
+            <span class="module-pill">Routing · Logiche · Flussi</span>
+            <span>Scalabile</span>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="terminal">
+          <div class="module-label">Automazioni</div>
+          <div class="module-name">Terminal — Comandi &amp; agenti AI</div>
+          <div class="module-desc">
+            Console per lanciare automazioni, interrogare sistemi e interagire con agenti AI come RZAi‑pulciz.
+          </div>
+          <div class="module-meta">
+            <span class="module-pill">Comandi · Script · AI</span>
+            <span>Interattivo</span>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="portal">
+          <div class="module-label">Interfacce</div>
+          <div class="module-name">Portal Fusion — Portali &amp; dashboard</div>
+          <div class="module-desc">
+            Pannelli moderni per team, clienti e partner. KPI, viste operative e accessi controllati.
+          </div>
+          <div class="module-meta">
+            <span class="module-pill">Dashboard · Portali</span>
+            <span>UX Premium</span>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="dsn">
+          <div class="module-label">Layer</div>
+          <div class="module-name">DSN Layer — Configurazioni avanzate</div>
+          <div class="module-desc">
+            Gestione centralizzata di configurazioni, mapping e logiche distribuite. Pronto per scenari complessi.
+          </div>
+          <div class="module-meta">
+            <span class="module-pill">Config · Mapping</span>
+            <span>Enterprise</span>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="wallet">
+          <div class="module-label">Finanza</div>
+          <div class="module-name">Wallet — Pagamenti &amp; crediti</div>
+          <div class="module-desc">
+            Modulo per wallet digitali, crediti interni, loyalty e integrazioni con sistemi di pagamento.
+          </div>
+          <div class="module-meta">
+            <span class="module-pill">Pagamenti · Loyalty</span>
+            <span>Web3 Ready</span>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="bitrix">
+          <div class="module-label">CRM</div>
+          <div class="module-name">Bitrix24 Apps — Estensioni su misura</div>
+          <div class="module-desc">
+            App, widget e automazioni personalizzate per il tuo Bitrix24: CRM, task, vendite, HR e altro.
+          </div>
+          <div class="module-meta">
+            <span class="module-pill">CRM · Task · HR</span>
+            <span>Su misura</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORE -->
+    <section class="section">
+      <h2 class="section-title">Cosa ottieni scegliendo CloudX × ZDOS</h2>
+      <p class="section-sub">
+        Non solo tecnologia: un ecosistema pensato per ridurre costi, aumentare efficienza e dare alla tua azienda
+        strumenti moderni, chiari e scalabili.
+      </p>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Soluzioni su misura</h3>
+          <p>
+            Ogni progetto è costruito sui tuoi processi, non su template generici.
+          </p>
+          <ul class="value-list">
+            <li>App personalizzate per Bitrix24</li>
+            <li>Workflow e automazioni dedicate</li>
+            <li>Portali e dashboard su misura</li>
+          </ul>
+        </div>
+
+        <div class="value-card">
+          <h3>Integrazioni professionali</h3>
+          <p>
+            Colleghiamo i tuoi sistemi in modo stabile e sicuro.
+          </p>
+          <ul class="value-list">
+            <li>ERP, gestionali, e‑commerce</li>
+            <li>Sistemi di pagamento e wallet</li>
+            <li>Servizi cloud e database esterni</li>
+          </ul>
+        </div>
+
+        <div class="value-card">
+          <h3>Esperienza utente premium</h3>
+          <p>
+            Interfacce moderne, leggibili e coerenti con il tuo brand.
+          </p>
+          <ul class="value-list">
+            <li>Design system dedicato</li>
+            <li>UI responsive e veloci</li>
+            <li>Branding integrato in ogni modulo</li>
+          </ul>
+        </div>
+
+        <div class="value-card">
+          <h3>Agenti AI integrati</h3>
+          <p>
+            RZAi‑pulciz e altri agenti possono supportare i tuoi team.
+          </p>
+          <ul class="value-list">
+            <li>Assistenza interna ai reparti</li>
+            <li>Attivazione di automazioni via comando</li>
+            <li>Supporto a processi complessi</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta-final" id="section-contatto">
+      <div>
+        <h2 class="cta-title">Pronto a trasformare la tua azienda?</h2>
+        <p class="cta-sub">
+          Raccontaci come lavori oggi: insieme possiamo progettare un ecosistema CloudX × ZDOS che automatizza,
+          collega e potenzia i tuoi processi, senza stravolgere ciò che già funziona.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <button class="btn btn-primary" id="btn-rzai-contact">
+          Chiedi a RZAi cosa possiamo fare per te
+        </button>
+        <button class="btn">
+          Oppure scrivici direttamente dal tuo canale preferito
+        </button>
+      </div>
+      <div class="cta-note">
+        Nessun impegno iniziale: partiamo da una mappatura dei tuoi processi e da una proposta chiara.
+      </div>
+    </section>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <div class="toast-dot"></div>
+    <div id="toast-text">Modulo selezionato.</div>
+  </div>
+
+  <script>
+    // TERMINALE RZAI CLIENTI
+
+    const output = document.getElementById("output");
+    const input = document.getElementById("input");
+
+    function type(text) {
+      let i = 0;
+      const speed = 15;
+      function typing() {
+        if (i < text.length) {
+          output.innerHTML += text.charAt(i);
+          i++;
+          output.scrollTop = output.scrollHeight;
+          setTimeout(typing, speed);
+        }
+      }
+      typing();
+    }
+
+    const aiResponses = {
+      help: `
+Comandi disponibili:
+help        - Mostra questo menu
+crm         - Soluzioni per CRM e Bitrix24
+automazioni - Automazioni e workflow
+portali     - Portali, dashboard e pannelli
+wallet      - Pagamenti, crediti e loyalty
+ai          - Agenti AI e RZAi‑pulciz
+integrazioni- Collegare sistemi esterni
+clear       - Pulisce il terminale
+easter      - ???`,
+
+      crm: "Possiamo creare moduli, app e automazioni su Bitrix24 per vendite, task, HR e supporto.",
+      automazioni: "Automatizziamo processi ripetitivi: notifiche, generazione documenti, sincronizzazioni, pipeline personalizzate.",
+      portali: "Realizziamo portali e dashboard per team, clienti e partner, con viste su misura.",
+      wallet: "Possiamo integrare wallet digitali, crediti interni, loyalty e sistemi di pagamento.",
+      ai: "RZAi‑pulciz può assistere i tuoi team, attivare automazioni e guidare l’uso dei sistemi.",
+      integrazioni: "Colleghiamo ERP, gestionali, e‑commerce, servizi cloud e database in un unico ecosistema.",
+      easter: "🟣 *Pulciz‑Mode attivato:* la tua azienda merita un ecosistema che brilla, non solo che funziona. 🐣✨",
+    };
+
+    function neonPulse() {
+      output.style.boxShadow = "0 0 22px rgba(34, 211, 238, 0.8)";
+      setTimeout(() => {
+        output.style.boxShadow = "0 0 18px rgba(37, 99, 235, 0.45)";
+      }, 260);
+    }
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const cmd = input.value.trim().toLowerCase();
+        input.value = "";
+
+        if (!cmd) return;
+
+        output.innerHTML += `\n> ${cmd}\n`;
+        neonPulse();
+
+        if (cmd === "clear") {
+          output.innerHTML = 'RZAi‑pulciz è online. Digita "help" per vedere cosa posso fare per la tua azienda.\n';
+          return;
+        }
+
+        if (aiResponses[cmd]) {
+          type(aiResponses[cmd] + "\n");
+        } else {
+          type("Comando non riconosciuto. Digita 'help' per la lista.\n");
+        }
+      }
+    });
+
+    // SCROLL AI MODULI / CONTATTO
+
+    const btnModuli = document.getElementById("btn-moduli");
+    const btnContatto = document.getElementById("btn-contatto");
+    const sectionModuli = document.getElementById("section-moduli");
+    const sectionContatto = document.getElementById("section-contatto");
+
+    btnModuli.addEventListener("click", () => {
+      sectionModuli.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    btnContatto.addEventListener("click", () => {
+      sectionContatto.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // MODULI INTERATTIVI + TOAST
+
+    const toast = document.getElementById("toast");
+    const toastText = document.getElementById("toast-text");
+
+    function showToast(text) {
+      toastText.textContent = text;
+      toast.style.display = "flex";
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 2600);
+    }
+
+    document.querySelectorAll(".module-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        const moduleKey = card.getAttribute("data-module");
+        let msg = "Modulo selezionato.";
+
+        switch (moduleKey) {
+          case "nexus":
+            msg = "Nexus: ideale per aziende con molti sistemi e reparti da coordinare.";
+            break;
+          case "terminal":
+            msg = "Terminal: perfetto se vuoi lanciare automazioni e comandi in modo rapido.";
+            break;
+          case "portal":
+            msg = "Portal Fusion: ideale per portali clienti, dashboard e viste per team.";
+            break;
+          case "dsn":
+            msg = "DSN Layer: pensato per scenari complessi con molte configurazioni.";
+            break;
+          case "wallet":
+            msg = "Wallet: utile se vuoi crediti interni, loyalty o pagamenti digitali.";
+            break;
+          case "bitrix":
+            msg = "Bitrix24 Apps: perfetto se usi già Bitrix24 e vuoi andare oltre i limiti standard.";
+            break;
+        }
+
+        showToast(msg);
+        neonPulse();
+      });
+    });
+
+    // CTA: CHIEDI A RZAI
+
+    const btnRzaiContact = document.getElementById("btn-rzai-contact");
+    btnRzaiContact.addEventListener("click", () => {
+      output.innerHTML += "\n> contatto\n";
+      type(
+        "Perfetto. Possiamo partire da una call di analisi dei tuoi processi e proporti una soluzione CloudX × ZDOS su misura.\n"
+      );
+      neonPulse();
+      sectionContatto.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

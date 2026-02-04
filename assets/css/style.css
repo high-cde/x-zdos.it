@@ -1,0 +1,41 @@
+/* Badge NEW nel menu */
+.new-badge::after {
+  content: "NEW";
+  font-size: 9px;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #22d3ee;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+}
+
+/* Mini-RZAi fisso in basso a destra */
+#mini-rzai {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.rzai-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #22d3ee, #0f172a);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.7);
+}
+
+.rzai-bubble {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  color: #e5e7eb;
+}
