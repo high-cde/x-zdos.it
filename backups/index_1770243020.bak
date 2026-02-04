@@ -141,12 +141,6 @@
 </div>
 <script src="assets/js/main.js"></script>
 <body>
-<section class="hero-main">
-<h1 class="hero-title">xZDOS Enterprise Platform</h1>
-<p class="hero-sub">Ecosistema modulare per aziende, automazioni, AI e integrazioni.</p>
-<div class="hero-tags"><span class="tag">CloudX</span><span class="tag">Automazioni</span><span class="tag">AI</span><span class="tag">xCLOUD</span></div>
-<button class="btn btn-primary" onclick="window.location.href='/clienti.html'">Scopri le Soluzioni Aziendali</button>
-</section>
 
 <header>
   <h1>xZDOS Enterprise</h1>
@@ -186,13 +180,4 @@ Pronto per i comandi.</div>
 
 </body>
 </html>
-
-
-<!-- TERMINALE RZAI -->
-<section class="terminal-window">
-  <div id="output">RZAi‑pulciz è online. Digita "help" per iniziare.</div>
-  <input id="input" type="text" placeholder='Scrivi un comando...' />
-</section>
-
-<script src="assets/js/rzai.js"></script>
 

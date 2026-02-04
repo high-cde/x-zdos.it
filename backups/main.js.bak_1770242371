@@ -1,0 +1,22 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const miniRzai = document.getElementById("mini-rzai");
+  const bubble = document.querySelector(".rzai-bubble");
+
+  const messages = [
+    "Serve aiuto?",
+    "Vuoi una soluzione su misura?",
+    "Posso guidarti nei moduli.",
+    "Hai già visto la pagina clienti?",
+    "Vuoi automatizzare qualcosa?"
+  ];
+
+  let i = 0;
+  setInterval(() => {
+    bubble.textContent = messages[i];
+    i = (i + 1) % messages.length;
+  }, 4000);
+
+  miniRzai.addEventListener("click", () => {
+    window.location.href = "/clienti.html#section-contatto";
+  });
+});
