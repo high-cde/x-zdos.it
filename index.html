@@ -1,1 +1,535 @@
-[QUI IL NUOVO INDEX.HTML COMPLETO CON EFFETTO FRANTUMI + DISCORD + KO-FI]
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>CloudX Portal – X‑ZDOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #050509;
+      --panel: #0b0b11;
+      --accent: #00eaff;
+      --accent-soft: #00c7d6;
+      --text-main: #f5f5f5;
+      --text-soft: #a0a0b0;
+      --border-soft: #1b1b25;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #101020 0, #050509 45%, #000 100%);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* INTRO */
+    #intro {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 20;
+      overflow: hidden;
+    }
+
+    #introText {
+      font-size: 22px;
+      color: var(--accent);
+      text-shadow: 0 0 10px #00eaff88;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--accent);
+      width: 0;
+      animation: typing 2.5s steps(30), blink 0.7s infinite;
+    }
+
+    @keyframes typing { from { width: 0; } to { width: 260px; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* HEADER */
+    .header {
+      width: 100%;
+      padding: 18px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+      background: rgba(5,5,9,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #111;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: radial-gradient(circle at 30% 20%, #00eaff, #004b66 60%, #000 100%);
+      box-shadow: 0 0 14px #00eaff88;
+    }
+
+    .brand-title {
+      font-size: 16px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+      font-size: 14px;
+    }
+
+    .nav a:hover {
+      border-color: #2a2a3a;
+      color: var(--accent);
+      background: #0b0b14;
+    }
+
+    .nav a.primary {
+      border-color: #00eaff55;
+      color: var(--accent);
+      background: #05050b;
+      box-shadow: 0 0 12px #00eaff44;
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 140px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 14px;
+      color: var(--accent);
+      text-shadow: 0 0 14px #00eaff55;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--text-soft);
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 26px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #050509;
+      box-shadow: 0 0 16px #00eaff88;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
+      box-shadow: 0 0 20px #00eaffaa;
+    }
+
+    .btn-ghost {
+      background: #0b0b14;
+      border: 1px solid #26263a;
+      color: var(--text-soft);
+    }
+
+    .btn-ghost:hover {
+      border-color: #3a3a55;
+      color: var(--accent);
+    }
+
+    /* SOCIAL BUTTONS */
+    .social-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s ease;
+      border: 1px solid #26263a;
+      background: #0b0b14;
+      color: var(--text-soft);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .social-btn.discord:hover {
+      border-color: #5865F2;
+      color: #5865F2;
+      box-shadow: 0 0 12px #5865F288;
+    }
+
+    .social-btn.kofi:hover {
+      border-color: #FF5E5B;
+      color: #FF5E5B;
+      box-shadow: 0 0 12px #FF5E5B88;
+    }
+
+    /* DESKTOP + TERMINAL */
+    .desktop {
+      max-width: 1100px;
+      margin: 60px auto 40px;
+      padding: 20px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #00eaff11 0, #050509 55%);
+      border: 1px solid #151522;
+      box-shadow: 0 0 26px #000000aa;
+    }
+
+    .desktop-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .terminal-window {
+      background: #050509;
+      border-radius: 12px;
+      border: 1px solid #26263a;
+      overflow: hidden;
+      box-shadow: 0 0 18px #000000aa;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      background: #0b0b14;
+      border-bottom: 1px solid #151522;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .term-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .term-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .term-dot.red { background: #ff5f57; }
+    .term-dot.yellow { background: #febc2e; }
+    .term-dot.green { background: #28c840; }
+
+    .terminal-body {
+      padding: 10px;
+      font-family: "SF Mono", "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: var(--accent);
+      background: radial-gradient(circle at top, #101020 0, #050509 60%);
+      min-height: 220px;
+    }
+
+    .terminal-output {
+      white-space: pre-wrap;
+      margin-bottom: 6px;
+      color: #d0f6ff;
+    }
+
+    .terminal-input-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .terminal-prompt {
+      color: var(--accent-soft);
+    }
+
+    .terminal-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 30px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-soft);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 14px 16px;
+      }
+      .hero h1 {
+        font-size: 30px;
+      }
+      .desktop {
+        margin: 40px 12px 30px;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- INTRO -->
+  <div id="intro">
+    <div id="introText">BOOTING CLOUDX SYSTEM...</div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-title">CloudX Portal</div>
+    </div>
+
+    <nav class="nav">
+      <a href="https://x-zdos.it" class="primary">Home</a>
+      <a href="https://x-zdos.it/zdos">ZDOS</a>
+      <a href="https://wallet.x-zdos.it">DSN Wallet</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <h1>Accesso al circuito X‑ZDOS</h1>
+    <p>
+      Il punto di ingresso ufficiale dell’ecosistema CloudX × ZDOS.<br>
+      Un portale modulare, neon, minimal, progettato per espandersi senza frizione.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wallet.x-zdos.it">Apri DSN Wallet</a>
+      <a class="btn btn-ghost" href="https://x-zdos.it/zdos">Vai a ZDOS</a>
+    </div>
+
+    <div class="social-buttons">
+      <a class="social-btn discord" href="https://discord.gg/9fDdURTevG" target="_blank">
+        <svg viewBox="0 0 245 240">
+          <path fill="#5865F2" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1zm36.2 0c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
+          <path fill="#5865F2" d="M189.5 20h-134C24.6 20 0 44.6 0 75.5v89C0 195.4 24.6 220 55.5 220h113.1l-5.3-18.5 12.8 11.9 12.1 11.2 21.3 19V75.5C209.5 44.6 184.9 20 154 20zm-39.2 135s-3.7-4.4-6.8-8.3c13.5-3.8 18.6-12.1 18.6-12.1-4.2 2.7-8.2 4.6-11.8 5.9-5.1 2.1-10 3.5-14.8 4.3-9.8 1.8-18.8 1.3-26.6-.1-5.8-1.1-10.8-2.7-15-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-.1-.1-.2-.1-.3-.2-1.3-.7-2-1.2-2-1.2s5 8.1 18.2 12c-3.1 3.9-6.9 8.5-6.9 8.5-22.8-.7-31.5-15.7-31.5-15.7 0-33.3 14.9-60.3 14.9-60.3 14.9-11.2 29-10.9 29-10.9l1 1.2c-18.6 5.4-27.2 13.6-27.2 13.6s2.3-1.3 6.2-3.1c11.3-5 20.3-6.3 24-6.6.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-8.2-7.8-25.7-13.2l1.4-1.6s14.1-.3 29 10.9c0 0 14.9 27 14.9 60.3 0 0-8.8 15-31.6 15.7z"/>
+        </svg>
+        Entra nel Discord
+      </a>
+
+      <a class="social-btn kofi" href="https://ko-fi.com/highkali" target="_blank">
+        <svg viewBox="0 0 100 100">
+          <path fill="#FF5E5B" d="M50 10c-22.1 0-40 14.3-40 32s17.9 32 40 32 40-14.3 40-32-17.9-32-40-32z"/>
+          <path fill="#fff" d="M67 38c0 8.3-17 20-17 20S33 46.3 33 38c0-4.4 3.6-8 8-8 3.1 0 5.8 1.7 7 4.2C49.2 31.7 51.9 30 55 30c4.4 0 8 3.6 8 8z"/>
+        </svg>
+        Supporta su Ko‑fi
+      </a>
+    </div>
+  </section>
+
+  <!-- DESKTOP + TERMINAL -->
+  <section class="desktop">
+    <div class="desktop-title">CloudX Desktop · Terminal Module</div>
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="term-dots">
+          <div class="term-dot red"></div>
+          <div class="term-dot yellow"></div>
+          <div class="term-dot green"></div>
+        </div>
+        <div>cloudx@xdos: ~</div>
+        <div>Collapse‑OS emu (concept)</div>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-output" class="terminal-output">
+CloudX Terminal v0.1
+Type "help" for available commands.
+        </div>
+        <div class="terminal-input-line">
+          <span class="terminal-prompt">cloudx@xdos:~$</span>
+          <input id="terminal-input" class="terminal-input" autocomplete="off" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    CloudX Portal · Ecosistema X‑ZDOS · Neon Minimal Architecture
+  </footer>
+
+  <script>
+    // Effetto frantumi intro
+    setTimeout(() => {
+      const intro = document.getElementById("intro");
+      const text = document.getElementById("introText");
+      const rect = text.getBoundingClientRect();
+
+      for (let i = 0; i < 60; i++) {
+        const p = document.createElement("div");
+        p.classList.add("particle");
+        intro.appendChild(p);
+
+        p.style.left = rect.left + rect.width / 2 + "px";
+        p.style.top = rect.top + rect.height / 2 + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 80 + Math.random() * 120;
+
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
+        p.animate([
+          { transform: "translate(0,0)", opacity: 1 },
+          { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+        ], {
+          duration: 900 + Math.random() * 400,
+          easing: "ease-out",
+          fill: "forwards"
+        });
+      }
+
+      text.style.opacity = 0;
+
+      setTimeout(() => {
+        intro.style.opacity = 0;
+        intro.style.transition = "opacity 0.8s ease";
+      }, 300);
+
+      setTimeout(() => {
+        intro.remove();
+        document.getElementById("header").style.opacity = 1;
+        document.getElementById("hero").style.opacity = 1;
+      }, 1100);
+
+    }, 2800);
+
+    // Terminal minimale
+    const termOut = document.getElementById("terminal-output");
+    const termIn = document.getElementById("terminal-input");
+
+    const commands = {
+      help: () => 
+`Available commands:
+  help        - show this help
+  about       - info on CloudX × ZDOS
+  collapse    - concept note on Collapse‑OS
+  clear       - clear screen`,
+      about: () =>
+`CloudX × ZDOS
+Modular neon ecosystem.
+Portal, ZDOS module, DSN Wallet.`,
+      collapse: () =>
+`Collapse‑OS emu (concept)
+This terminal is a UI shell.
+Real Collapse‑OS would run on bare metal / VM.`,
+      clear: () => {
+        termOut.textContent = "";
+        return "";
+      }
+    };
+
+    termIn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const value = termIn.value.trim();
+        if (!value) return;
+        const prompt = "cloudx@xdos:~$ " + value + "\\n";
+        let response = "";
+
+        if (commands[value]) {
+          const res = commands[value]();
+          if (res) response = res + "\\n";
+        } else {
+          response = `Command not found: ${value}\\n`;
+        }
+
+        if (value !== "clear") {
+          termOut.textContent += "\\n" + prompt + response;
+        }
+
+        termIn.value = "";
+        const body = termOut.parentElement;
+        body.scrollTop = body.scrollHeight;
+      }
+    });
+  </script>
+
+</body>
+</html>
