@@ -1,0 +1,104 @@
+/* Badge NEW nel menu */
+.new-badge::after {
+  content: "NEW";
+  font-size: 9px;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #22d3ee;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+}
+
+/* Mini-RZAi fisso in basso a destra */
+#mini-rzai {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.rzai-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #22d3ee, #0f172a);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.7);
+}
+
+.rzai-bubble {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  color: #e5e7eb;
+}
+
+/* === RZAI MAX POWER: RESPIRO NEON + HOVER BUBBLE === */
+@keyframes rzai-breath {
+  0% { transform: scale(1); box-shadow: 0 0 14px rgba(34, 211, 238, 0.7); }
+  50% { transform: scale(1.06); box-shadow: 0 0 22px rgba(34, 211, 238, 1); }
+  100% { transform: scale(1); box-shadow: 0 0 14px rgba(34, 211, 238, 0.7); }
+}
+
+.rzai-avatar {
+  animation: rzai-breath 3s ease-in-out infinite;
+}
+
+/* Hover bubble più viva */
+#mini-rzai:hover .rzai-bubble {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.rzai-bubble {
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+/* Neon generale link + background premium */
+a:hover {
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
+  color: #22d3ee;
+}
+
+body {
+  background: radial-gradient(circle at top, #020617 0%, #000 100%);
+}
+
+/* === MAX POWER NEON + RZAI === */
+@keyframes rzai-breath {
+  0% { transform: scale(1); box-shadow: 0 0 14px rgba(34, 211, 238, 0.7); }
+  50% { transform: scale(1.06); box-shadow: 0 0 22px rgba(34, 211, 238, 1); }
+  100% { transform: scale(1); box-shadow: 0 0 14px rgba(34, 211, 238, 0.7); }
+}
+
+.rzai-avatar {
+  animation: rzai-breath 3s ease-in-out infinite;
+}
+
+#mini-rzai:hover .rzai-bubble {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.rzai-bubble {
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
+  color: #22d3ee;
+}
+
+body {
+  background: radial-gradient(circle at top, #020617 0%, #000 100%);
+}
+

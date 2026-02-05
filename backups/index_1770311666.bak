@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>x-zdos.it</title>
+
+  <!-- Collegamento al CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xZDOS Enterprise Platform</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6MQFQ2XL3K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6MQFQ2XL3K');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #05070d;
+      color: #e5e5e5;
+      font-family: "Inter", sans-serif;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(10, 15, 26, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 22px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.15);
+      box-shadow: 0 0 22px rgba(0, 200, 255, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #7dd3fc;
+      text-shadow: 0 0 12px #0ea5e9;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #e5e5e5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #7dd3fc;
+      text-shadow: 0 0 8px #0ea5e9;
+    }
+
+    /* TERMINALE CENTRALE */
+    .terminal-container {
+      max-width: 900px;
+      margin: 80px auto;
+      background: #0a0f1a;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 0 22px rgba(0, 200, 255, 0.25);
+      border: 1px solid rgba(0, 200, 255, 0.15);
+    }
+
+    .terminal-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+
+    #terminal {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 15px;
+      color: #7dd3fc;
+      white-space: pre-wrap;
+      min-height: 260px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 80px;
+      opacity: 0.6;
+    }
+
+    /* BOTTONI SOCIAL */
+    .social-bar {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .social-bar a {
+      margin: 0 12px;
+      color: #7dd3fc;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .social-bar a:hover {
+      color: #e5e5e5;
+      text-shadow: 0 0 8px #0ea5e9;
+    }
+  </style>
+</head>
+<div id="mini-rzai">
+  <div class="rzai-avatar"></div>
+  <div class="rzai-bubble">Serve aiuto?</div>
+</div>
+<script src="assets/js/main.js"></script>
+<body>
+<section class="hero-main">
+<h1 class="hero-title">xZDOS Enterprise Platform</h1>
+<p class="hero-sub">Ecosistema modulare per aziende, automazioni, AI e integrazioni.</p>
+<div class="hero-tags"><span class="tag">CloudX</span><span class="tag">Automazioni</span><span class="tag">AI</span><span class="tag">xCLOUD</span></div>
+<button class="btn btn-primary" onclick="window.location.href='/clienti.html'">Scopri le Soluzioni Aziendali</button>
+</section>
+
+<header>
+  <h1>xZDOS Enterprise</h1>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/zdos/">ZDOS</a></li>
+      <li><a href="/xCLOUD/">xCLOUD</a></li>
+      <li><a href="/agents/rzai-pulciz/">RZAi‑pulciz</a></li>
+      <li><a href="https://discord.gg/">Discord</a></li>
+      <li><a href="/clienti.html" class="new-badge">Soluzioni Aziendali</a></li> 
+      <li><a href="https://ko-fi.com/">Ko‑fi</a></li>
+     <li><a href="https://wallet.x-zdos.it/">Wallet</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- TERMINALE CENTRALE -->
+<div class="terminal-container">
+  <div class="terminal-header">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+  </div>
+
+  <div id="terminal">Avvio RZAi‑pulciz...
+Caricamento moduli...
+Pronto per i comandi.</div>
+</div>
+
+<footer>
+  © xZDOS Enterprise Platform — CloudX × ZDOS
+</footer>
+
+<script src="assets/js/rzai.js"></script>
+
+</body>
+</html>
+
+
+<!-- TERMINALE RZAI -->
+<section class="terminal-window">
+  <div id="output">RZAi‑pulciz è online. Digita "help" per iniziare.</div>
+  <input id="input" type="text" placeholder='Scrivi un comando...' />
+</section>
+
+<script src="assets/js/rzai.js"></script>
+
