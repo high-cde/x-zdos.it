@@ -2,11 +2,231 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>x-zdos.it</title>
+  <title>xZDOS · Sistema Centrale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #050505;
+      color: #e6e6e6;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a0a, #111);
+      border-bottom: 1px solid #222;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      letter-spacing: 3px;
+      color: #00eaff;
+      text-shadow: 0 0 15px #00eaff55;
+    }
+
+    p.subtitle {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      opacity: 0.8;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin: 40px 0 20px;
+      color: #00eaff;
+      border-left: 4px solid #00eaff;
+      padding-left: 12px;
+    }
+
+    .section-text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #0f0f0f;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #1f1f1f;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #00eaff;
+      box-shadow: 0 0 20px #00eaff33;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #00eaff;
+      font-size: 1.4rem;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      border-top: 1px solid #222;
+    }
+
+    a {
+      color: #00eaff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .timeline {
+      border-left: 2px solid #00eaff55;
+      margin: 40px 0;
+      padding-left: 20px;
+    }
+
+    .timeline-entry {
+      margin-bottom: 25px;
+    }
+
+    .timeline-entry h4 {
+      margin: 0;
+      color: #00eaff;
+    }
+
+    .timeline-entry p {
+      margin: 5px 0 0;
+      opacity: 0.85;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Sito attivo</h1>
-  <p>GitHub Pages è configurato correttamente.</p>
+
+<header>
+  <h1>xZDOS</h1>
+  <p class="subtitle">Sistema centrale · Architettura modulare · Intelligenza distribuita</p>
+</header>
+
+<div class="container">
+
+  <!-- Filosofia -->
+  <h2 class="section-title">Filosofia del Sistema</h2>
+  <p class="section-text">
+    xZDOS nasce come un ecosistema operativo distribuito, progettato per orchestrare, validare e mantenere
+    un insieme di moduli intelligenti che collaborano tra loro. Ogni componente è autonomo, ma parte di un
+    disegno più grande: un sistema che evolve, si adatta, si auto‑analizza e mantiene la propria integrità
+    attraverso cicli continui di supervisione e riparazione.
+  </p>
+
+  <!-- Moduli -->
+  <h2 class="section-title">Moduli Principali</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Dr. High‑berzek</h3>
+      <p>
+        L’orchestratore supremo. Analizza repository, genera piani, aggiorna lo stato operativo e mantiene
+        la memoria del sistema. È il cervello strategico dell’ecosistema.
+      </p>
+      <p><strong>Funzioni chiave:</strong> pianificazione, analisi, stato, priorità.</p>
+    </div>
+
+    <div class="card">
+      <h3>SENTINEL</h3>
+      <p>
+        Il modulo esecutivo. Riceve i piani da Dr. High‑berzek, li esegue, monitora gli errori e attiva
+        procedure di auto‑riparazione. È il braccio operativo del sistema.
+      </p>
+      <p><strong>Funzioni chiave:</strong> esecuzione, fallback, monitoraggio.</p>
+    </div>
+
+    <div class="card">
+      <h3>RZAI‑pulciz</h3>
+      <p>
+        Il validatore. Controlla integrità, coerenza, sicurezza e struttura dei repository. Segnala anomalie
+        e supporta la supervisione.
+      </p>
+      <p><strong>Funzioni chiave:</strong> validazione, sicurezza, notifiche.</p>
+    </div>
+
+    <div class="card">
+      <h3>xZDOS Wallet</h3>
+      <p>
+        Modulo dedicato alla gestione wallet dell’ecosistema. Interfaccia separata, sicura e modulare.
+      </p>
+      <p><a href="https://wallet.x-zdos.it">Apri wallet.x-zdos.it</a></p>
+    </div>
+
+  </div>
+
+  <!-- Architettura -->
+  <h2 class="section-title">Architettura Tecnica</h2>
+  <p class="section-text">
+    L’ecosistema è costruito su una logica a livelli:
+    <br><br>
+    <strong>• Livello 1 — Orchestrazione:</strong> Dr. High‑berzek genera piani e aggiorna lo stato.<br>
+    <strong>• Livello 2 — Esecuzione:</strong> SENTINEL applica i piani e gestisce gli errori.<br>
+    <strong>• Livello 3 — Validazione:</strong> RZAI‑pulciz controlla integrità e sicurezza.<br>
+    <strong>• Livello 4 — Interfacce:</strong> moduli come wallet.x-zdos.it espongono funzionalità specifiche.<br>
+    <br>
+    Ogni livello comunica tramite file JSON, code di esecuzione e stati persistenti.
+  </p>
+
+  <!-- Timeline -->
+  <h2 class="section-title">Timeline Evolutiva</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-entry">
+      <h4>Fase 1 — Fondazione</h4>
+      <p>Creazione dei repository base e definizione dell’ecosistema xZDOS.</p>
+    </div>
+
+    <div class="timeline-entry">
+      <h4>Fase 2 — Orchestratore</h4>
+      <p>Nascita di Dr. High‑berzek con stato persistente e mood operativo.</p>
+    </div>
+
+    <div class="timeline-entry">
+      <h4>Fase 3 — Supervisione</h4>
+      <p>Integrazione di SENTINEL e RZAI‑pulciz come moduli di controllo e validazione.</p>
+    </div>
+
+    <div class="timeline-entry">
+      <h4>Fase 4 — Espansione</h4>
+      <p>Creazione di wallet.x-zdos.it e moduli futuri dell’ecosistema.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © xZDOS · Sistema modulare · Architettura distribuita · Evoluzione continua
+</footer>
+
 </body>
 </html>
