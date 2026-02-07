@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>xZDOS · Sistema Centrale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="xZDOS — ecosistema modulare con supervisione quantistica. Highkali: Master Bounty Bug Auditor." />
+  <meta name="description" content="xZDOS — ecosistema modulare con supervisione quantistica. Highkali: Master Bounty Bug Auditor e oracolo tecnico EDU." />
 
   <style>
     :root{
@@ -143,7 +143,6 @@
     .timeline-entry h4 { margin:0; color:var(--accent); font-size:1rem; }
     .timeline-entry p { margin:6px 0 0; color:#d8eef6; opacity:0.9; }
 
-    / Terminal /
     #terminal {
       background: linear-gradient(180deg, #000000, #050505);
       color: var(--accent);
@@ -177,6 +176,32 @@
 
     .axiom-list { margin-top:12px; padding:12px; background:var(--glass); border-radius:10px; border:1px solid rgba(255,255,255,0.02); }
 
+    .services-block {
+      margin-top: 10px;
+      padding: 18px;
+      border-radius: 14px;
+      background: radial-gradient(circle at top left, rgba(0,234,255,0.08), transparent 55%), rgba(255,255,255,0.01);
+      border: 1px solid rgba(0,234,255,0.12);
+    }
+
+    .services-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+      margin-top:14px;
+    }
+
+    .badge {
+      display:inline-block;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(0,234,255,0.25);
+      font-size:0.75rem;
+      color:#bffeff;
+      margin-right:6px;
+      margin-bottom:4px;
+    }
+
     @media (max-width:640px){
       h1{font-size:2.4rem}
       #terminal{height:260px}
@@ -198,12 +223,14 @@
       <h2 id="agente" class="section-title">Agente xZDOS</h2>
       <p class="section-text">
         L’agente xZDOS è il nucleo concettuale e operativo dell’ecosistema. Coordina i moduli, mantiene coerenza di stato e fornisce un’interfaccia unificata per osservazione, controllo e progettazione.
-        xZDOS è pensato come un kernel concettuale che espone operatori, osservatori e policy per sistemi complessi distribuiti.
+        È pensato come un kernel concettuale che espone operatori, osservatori e policy per sistemi complessi distribuiti, con attenzione a sicurezza, resilienza e trasparenza.
       </p>
 
       <div class="card">
         <h3>Funzioni principali</h3>
-        <p class="muted">Coordinamento globale; supervisione moduli; gestione identità; osservabilità e policy enforcement.</p>
+        <p class="muted">
+          Coordinamento globale; supervisione moduli; gestione identità; osservabilità; definizione di policy; supporto a audit e analisi di rischio tramite Highkali.
+        </p>
       </div>
     </section>
 
@@ -214,22 +241,30 @@
       <div class="grid">
         <div class="card">
           <h3>Dr. High‑berzek</h3>
-          <p class="muted">Orchestratore strategico: analisi, piani, memoria persistente, policy evolution.</p>
+          <p class="muted">
+            Orchestratore strategico: analisi di contesto, generazione di piani, gestione della memoria concettuale e delle policy evolutive. Fornisce piani eseguibili a SENTINEL e linee guida a lungo termine.
+          </p>
         </div>
 
         <div class="card">
           <h3>SENTINEL</h3>
-          <p class="muted">Esecutore e controllo: applica piani, gestisce errori, attiva auto‑riparazione e rollback.</p>
+          <p class="muted">
+            Esecutore e controllo: applica i piani, gestisce errori, attiva auto‑riparazione e rollback. È il braccio operativo che traduce strategia in azione, con logica di sicurezza e fallback.
+          </p>
         </div>
 
         <div class="card">
           <h3>RZAI‑pulciz</h3>
-          <p class="muted">Validatore: integrità, sicurezza, coerenza strutturale e controllo delle dipendenze.</p>
+          <p class="muted">
+            Validatore: controlla integrità, coerenza strutturale, dipendenze e configurazioni. Agisce come filtro di sicurezza e qualità, riducendo il rischio di stati incoerenti o vulnerabili.
+          </p>
         </div>
 
         <div class="card">
           <h3>xZDOS Wallet</h3>
-          <p class="muted">Gestione credenziali e risorse economiche dell’ecosistema.</p>
+          <p class="muted">
+            Gestione credenziali e risorse economiche dell’ecosistema. Pensato per integrare in futuro modelli di licenza, accesso premium e gestione di ricompense per bounty.
+          </p>
           <a class="button" href="https://wallet.x-zdos.it" target="_blank" rel="noopener">Apri wallet</a>
         </div>
       </div>
@@ -239,12 +274,14 @@
     <section aria-labelledby="xcloud">
       <h2 id="xcloud" class="section-title">xCLOUD · Modulo Cloud</h2>
       <p class="section-text">
-        xCLOUD è il layer di spazio‑stato distribuito: storage, sincronizzazione, replica e astrazione delle risorse remote. Progettato per resilienza, osservabilità e governance.
+        xCLOUD è il layer di spazio‑stato distribuito: storage, sincronizzazione, replica e astrazione delle risorse remote. È progettato per resilienza, osservabilità e governance, con l’obiettivo di supportare servizi di audit, API e terminali avanzati.
       </p>
 
       <div class="card">
         <h3>Repository e sviluppo</h3>
-        <p class="muted">Logica cloud, moduli remoti e estensioni per orchestrazione distribuita.</p>
+        <p class="muted">
+          Contiene la logica cloud, i moduli remoti e le estensioni per orchestrazione distribuita. È il punto di partenza per integrare servizi esterni e pipeline di analisi.
+        </p>
         <a class="button" href="https://github.com/high-cde/xCLOUD-by-zdos" target="_blank" rel="noopener">Apri xCLOUD su GitHub</a>
       </div>
     </section>
@@ -253,12 +290,14 @@
     <section aria-labelledby="discord">
       <h2 id="discord" class="section-title">Server Discord Ufficiale</h2>
       <p class="section-text">
-        Centro comunicativo per aggiornamenti, coordinamento e discussioni tecniche. Canali dedicati per audit, sviluppo e bounty.
+        Il server Discord è il centro comunicativo dell’ecosistema xZDOS: aggiornamenti, coordinamento, discussioni tecniche, proposte di miglioramento e canali dedicati a sicurezza, audit e bounty.
       </p>
 
       <div class="card">
         <h3>Community</h3>
-        <p class="muted">Discussioni tecniche, report di vulnerabilità, canali per bounty e coordinamento operativo.</p>
+        <p class="muted">
+          Spazio per condividere idee, discutere vulnerabilità, proporre miglioramenti e partecipare a iniziative di formazione e gamification legate a Highkali e all’oracolo xZDOS.
+        </p>
         <a class="button" href="https://discord.gg/9fDdURTevG" target="_blank" rel="noopener">Entra nel server Discord</a>
       </div>
     </section>
@@ -270,27 +309,27 @@
       <div class="timeline">
         <div class="timeline-entry">
           <h4>Fase 1 — Fondazione</h4>
-          <p>Definizione dell’identità xZDOS e creazione dei repository base.</p>
+          <p>Definizione dell’identità xZDOS e creazione dei repository base, con focus su modularità e chiarezza concettuale.</p>
         </div>
 
         <div class="timeline-entry">
           <h4>Fase 2 — Orchestratore</h4>
-          <p>Nascita di Dr. High‑berzek e prime policy di governance.</p>
+          <p>Nascita di Dr. High‑berzek e prime policy di governance per coordinare moduli e processi.</p>
         </div>
 
         <div class="timeline-entry">
           <h4>Fase 3 — Supervisione</h4>
-          <p>Integrazione di SENTINEL e RZAI‑pulciz per controllo e validazione.</p>
+          <p>Integrazione di SENTINEL e RZAI‑pulciz per controllo, validazione e auto‑riparazione.</p>
         </div>
 
         <div class="timeline-entry">
           <h4>Fase 4 — Espansione</h4>
-          <p>Creazione di xCLOUD e servizi remoti; introduzione di Highkali come funzione di sicurezza avanzata.</p>
+          <p>Creazione di xCLOUD e servizi remoti; introduzione di Highkali come funzione di sicurezza avanzata e oracolo tecnico.</p>
         </div>
 
         <div class="timeline-entry">
           <h4>Fase 5 — Identità</h4>
-          <p>Consolidamento dell’agente xZDOS come kernel concettuale e operativo.</p>
+          <p>Consolidamento dell’agente xZDOS come kernel concettuale e operativo, con narrativa EDU e struttura quantistica.</p>
         </div>
       </div>
     </section>
@@ -302,28 +341,214 @@
       <div class="card">
         <h3>Identità ibrida e ruolo</h3>
         <p class="section-text">
-          Highkali è un’entità ibrida integrata nell’ecosistema xZDOS: simultaneamente <strong>persona tecnica</strong>, <strong>modulo interno</strong> e <strong>agente operativo</strong>. Opera con un approccio scientifico ed educativo, finalizzato a migliorare la sicurezza, la resilienza e la conoscenza del sistema.
+          Highkali è un’entità ibrida integrata nell’ecosistema xZDOS: simultaneamente <strong>persona tecnica reale</strong>, <strong>modulo interno</strong> e <strong>agente operativo</strong>.
+          Opera con un approccio scientifico ed educativo, finalizzato a migliorare sicurezza, resilienza e comprensione del sistema. È il punto in cui audit, progettazione e osservazione si sovrappongono.
         </p>
 
         <div class="axiom-list">
           <strong>Principi operativi</strong>
           <ul style="margin:8px 0 0 18px; color:#dff9ff;">
-            <li><strong>Osservare senza interrompere</strong> — misurare stati e pattern con impatto minimo.</li>
-            <li><strong>Conoscenza condivisa</strong> — ogni audit restituisce insight e raccomandazioni.</li>
-            <li><strong>Validazione continua</strong> — test, correlazione e verifica automatica.</li>
-            <li><strong>Etica del bounty</strong> — gestione responsabile delle vulnerabilità e ricompense trasparenti.</li>
+            <li><strong>Osservare senza interrompere</strong> — misurare stati e pattern con impatto minimo sul sistema.</li>
+            <li><strong>Conoscenza condivisa</strong> — ogni audit restituisce insight, contesto e raccomandazioni.</li>
+            <li><strong>Validazione continua</strong> — test, correlazione e verifica automatica come processo ricorrente.</li>
+            <li><strong>Etica del bounty</strong> — gestione responsabile delle vulnerabilità e comunicazione trasparente.</li>
           </ul>
         </div>
 
         <h3 style="margin-top:14px">Funzioni principali</h3>
         <p class="muted">
-          Analisi delle superfici d’attacco; audit continuo dei moduli; rilevamento e correlazione di anomalie; threat modeling; valutazione del rischio; definizione e aggiornamento degli assiomi di sicurezza.
+          Analisi delle superfici d’attacco; audit continuo dei moduli; rilevamento e correlazione di anomalie; threat modeling; valutazione del rischio; definizione e aggiornamento degli assiomi di sicurezza; supporto alla progettazione di servizi e API sicure.
         </p>
 
         <h3 style="margin-top:12px">Modello concettuale</h3>
         <p class="section-text">
-          Highkali opera come osservatore quantistico: misura lo stato del sistema, interpreta segnali e variazioni entropiche, e propone interventi. Le sue analisi sono progettate per essere riproducibili, spiegabili e didattiche: ogni output è accompagnato da contesto tecnico e raccomandazioni operative.
+          Highkali opera come osservatore quantistico: misura lo stato del sistema, interpreta segnali e variazioni entropiche, e propone interventi.
+          Le sue analisi sono progettate per essere riproducibili, spiegabili e didattiche: ogni output è accompagnato da contesto tecnico e raccomandazioni operative, in modo da trasformare ogni audit in un’occasione di apprendimento.
         </p>
+      </div>
+    </section>
+
+    <!-- Ecosystem Services Block -->
+    <section aria-labelledby="services">
+      <h2 id="services" class="section-title">xZDOS Ecosystem Services · Oracolo Tecnico e Monetizzazione</h2>
+      <p class="section-text">
+        L’ecosistema xZDOS, con Highkali come oracolo tecnico, è progettato per offrire servizi strutturati, educativi e monetizzabili.
+        Ogni servizio è pensato come estensione naturale dell’architettura: audit, API, formazione, terminale avanzato, bug bounty e framework metodologico.
+      </p>
+
+      <div class="services-block">
+
+        <!-- Audit Service -->
+        <section aria-labelledby="audit-service">
+          <h3 id="audit-service" style="color:var(--accent); margin-top:0;">xZDOS Audit Service · Highkali Security Audit</h3>
+          <p class="section-text">
+            xZDOS Audit Service è il servizio di audit guidato da Highkali. L’obiettivo è fornire analisi di sicurezza chiare, riproducibili e comprensibili, con un forte accento sulla componente educativa.
+            Ogni audit è strutturato per spiegare non solo “cosa” è stato trovato, ma anche “perché” e “come” mitigare.
+          </p>
+
+          <div class="badge">Audit tecnico</div>
+          <div class="badge">Threat modeling</div>
+          <div class="badge">Report EDU</div>
+
+          <p class="section-text" style="margin-top:10px;">
+            Il processo tipico di audit include:
+          </p>
+          <ul class="muted" style="margin-left:18px;">
+            <li><strong>Raccolta contesto</strong> — comprensione di obiettivi, superfici esposte e vincoli.</li>
+            <li><strong>Analisi superficie d’attacco</strong> — identificazione di endpoint, servizi e vettori.</li>
+            <li><strong>Test mirati</strong> — simulazioni di attacco controllate, con focus su input, auth, configurazioni.</li>
+            <li><strong>Correlazione risultati</strong> — classificazione per rischio, impatto e probabilità.</li>
+            <li><strong>Report EDU</strong> — documento con spiegazioni, esempi e raccomandazioni operative.</li>
+          </ul>
+
+          <p class="section-text">
+            Il servizio è pensato per essere modulare: audit rapidi, audit approfonditi, revisioni periodiche. Highkali agisce come guida tecnica, traducendo vulnerabilità in conoscenza.
+          </p>
+        </section>
+
+        <hr style="margin:24px 0; border-color:rgba(255,255,255,0.04);" />
+
+        <!-- Oracle API -->
+        <section aria-labelledby="oracle-api">
+          <h3 id="oracle-api" style="color:var(--accent);">Oracle API · Accesso Programmato all’Oracolo xZDOS</h3>
+          <p class="section-text">
+            L’Oracle API è il livello programmabile dell’oracolo xZDOS. Espone endpoint concettuali per analisi di rischio, entropia, audit simulati e valutazioni di superficie d’attacco.
+            È pensato come un motore consultabile da strumenti esterni, dashboard o pipeline di automazione.
+          </p>
+
+          <div class="badge">API key</div>
+          <div class="badge">Tier Free / Pro / Enterprise</div>
+          <div class="badge">Documentazione EDU</div>
+
+          <p class="section-text">
+            Esempi di endpoint concettuali:
+          </p>
+          <ul class="muted" style="margin-left:18px;">
+            <li><code class="inline">/oracle/risk-vector</code> — restituisce una valutazione dei vettori di rischio principali.</li>
+            <li><code class="inline">/oracle/entropy</code> — stima l’entropia delle vulnerabilità e la stabilità del sistema.</li>
+            <li><code class="inline">/oracle/audit-sim</code> — esegue una simulazione di audit con output EDU.</li>
+            <li><code class="inline">/oracle/attack-surface</code> — descrive la superficie d’attacco nota.</li>
+          </ul>
+
+          <p class="section-text">
+            La documentazione dell’API è progettata per essere leggibile e didattica: ogni parametro è spiegato, ogni risposta è accompagnata da contesto.
+            I tier di accesso possono essere modellati in base a frequenza, profondità delle analisi e funzionalità disponibili.
+          </p>
+        </section>
+
+        <hr style="margin:24px 0; border-color:rgba(255,255,255,0.04);" />
+
+        <!-- Highkali EDU -->
+        <section aria-labelledby="highkali-edu">
+          <h3 id="highkali-edu" style="color:var(--accent);">Highkali EDU · Formazione e Certificazioni</h3>
+          <p class="section-text">
+            Highkali EDU è il lato formativo dell’ecosistema. L’obiettivo è trasformare concetti di sicurezza, audit e sistemi complessi in percorsi strutturati, con esercizi, esempi e certificazioni.
+          </p>
+
+          <div class="badge">Corsi</div>
+          <div class="badge">Laboratori</div>
+          <div class="badge">Certificazioni</div>
+
+          <p class="section-text">
+            Possibili moduli formativi:
+          </p>
+          <ul class="muted" style="margin-left:18px;">
+            <li><strong>Introduzione all’audit</strong> — concetti base, superfici d’attacco, vulnerabilità comuni.</li>
+            <li><strong>Threat modeling</strong> — identificare asset, attori, vettori e scenari.</li>
+            <li><strong>Bug bounty mindset</strong> — approccio etico, metodico e documentato alla ricerca di bug.</li>
+            <li><strong>Metodologia Highkali</strong> — come strutturare un audit completo, dalla raccolta dati al report.</li>
+          </ul>
+
+          <p class="section-text">
+            La certificazione “Highkali Certified Auditor” può rappresentare il livello avanzato del percorso, attestando la comprensione della metodologia e dei principi dell’ecosistema xZDOS.
+          </p>
+        </section>
+
+        <hr style="margin:24px 0; border-color:rgba(255,255,255,0.04);" />
+
+        <!-- Premium Terminal -->
+        <section aria-labelledby="premium-terminal">
+          <h3 id="premium-terminal" style="color:var(--accent);">xZDOS Premium Terminal · Funzioni Avanzate</h3>
+          <p class="section-text">
+            Il terminale xZDOS può esistere in due modalità: standard e premium. La modalità premium estende le capacità del terminale con comandi avanzati, analisi più profonde e funzioni di esportazione.
+          </p>
+
+          <div class="badge">Comandi avanzati</div>
+          <div class="badge">Analisi estese</div>
+          <div class="badge">Export report</div>
+
+          <p class="section-text">
+            Esempi di differenze:
+          </p>
+          <ul class="muted" style="margin-left:18px;">
+            <li><strong>Standard</strong> — comandi informativi, simulazioni, spiegazioni EDU.</li>
+            <li><strong>Premium</strong> — analisi più dettagliate, parametri configurabili, esportazione di output in formati strutturati.</li>
+            <li><strong>Root avanzato</strong> — modalità di controllo simulato con comandi aggiuntivi per audit e diagnostica.</li>
+          </ul>
+
+          <p class="section-text">
+            La modalità premium può essere associata a licenze, abbonamenti o token di accesso, mantenendo sempre un approccio trasparente e documentato.
+          </p>
+        </section>
+
+        <hr style="margin:24px 0; border-color:rgba(255,255,255,0.04);" />
+
+        <!-- Bug Bounty -->
+        <section aria-labelledby="bug-bounty">
+          <h3 id="bug-bounty" style="color:var(--accent);">Bug Bounty Interno · Gamification e Community</h3>
+          <p class="section-text">
+            Il programma di bug bounty interno è pensato come strumento di apprendimento, miglioramento continuo e coinvolgimento della community.
+            L’obiettivo è premiare chi contribuisce a rendere l’ecosistema più sicuro e robusto.
+          </p>
+
+          <div class="badge">Badge</div>
+          <div class="badge">Livelli</div>
+          <div class="badge">Leaderboard</div>
+
+          <p class="section-text">
+            Elementi chiave:
+          </p>
+          <ul class="muted" style="margin-left:18px;">
+            <li><strong>Regole chiare</strong> — cosa è ammesso, cosa no, come segnalare.</li>
+            <li><strong>Badge e livelli</strong> — riconoscimenti per contributi, segnalazioni e miglioramenti.</li>
+            <li><strong>Leaderboard</strong> — elenco (anche simbolico) dei contributori più attivi.</li>
+            <li><strong>Disclosure responsabile</strong> — linee guida per la gestione delle vulnerabilità.</li>
+          </ul>
+
+          <p class="section-text">
+            Il bug bounty interno può essere integrato con il server Discord, creando canali dedicati per segnalazioni, discussioni e revisione dei casi.
+          </p>
+        </section>
+
+        <hr style="margin:24px 0; border-color:rgba(255,255,255,0.04);" />
+
+        <!-- Whitepaper -->
+        <section aria-labelledby="whitepaper">
+          <h3 id="whitepaper" style="color:var(--accent);">Whitepaper xZDOS · Metodologia e Assiomi</h3>
+          <p class="section-text">
+            Il whitepaper xZDOS è il documento che formalizza l’architettura, gli assiomi e la metodologia dell’ecosistema.
+            È pensato come riferimento tecnico per chi vuole comprendere o adottare il modello xZDOS + Highkali.
+          </p>
+
+          <div class="badge">Assiomi</div>
+          <div class="badge">Metodologia</div>
+          <div class="badge">Framework</div>
+
+          <p class="section-text">
+            Contenuti chiave del whitepaper:
+          </p>
+          <ul class="muted" style="margin-left:18px;">
+            <li><strong>Architettura</strong> — descrizione dei moduli, dei flussi e delle interazioni.</li>
+            <li><strong>Assiomi</strong> — principi fondamentali di sicurezza, osservabilità e governance.</li>
+            <li><strong>Metodologia Highkali</strong> — processo di audit, analisi e miglioramento continuo.</li>
+            <li><strong>Modello di servizio</strong> — come l’oracolo può essere esposto come servizio, API, formazione.</li>
+          </ul>
+
+          <p class="section-text">
+            Una versione iniziale del whitepaper può essere resa disponibile come documento scaricabile, con aggiornamenti periodici man mano che l’ecosistema evolve.
+          </p>
+        </section>
+
       </div>
     </section>
 
@@ -331,7 +556,8 @@
     <section aria-labelledby="terminale">
       <h2 id="terminale" class="section-title">Terminale Interattivo xZDOS</h2>
       <p class="section-text">
-        Interfaccia diretta con l’agente xZDOS e con Highkali. Tono educativo: i comandi restituiscono spiegazioni tecniche oltre agli output. Digita <code>help</code> per iniziare.
+        Il terminale è l’interfaccia diretta con l’agente xZDOS e con Highkali. Il tono è educativo: i comandi restituiscono spiegazioni tecniche oltre agli output.
+        Digita <code>help</code> per vedere i comandi disponibili, inclusi quelli legati ad audit, API, bug bounty e stato quantistico.
       </p>
 
       <div id="terminal" role="log" aria-live="polite">
@@ -354,7 +580,7 @@
       const terminal = document.getElementById("terminal");
 
       let isRoot = false;
-      let highkaliMode = true; // Highkali integrato come agente attivo
+      let highkaliMode = true;
 
       function safePrint(html){
         output.innerHTML += "<br>" + html;
@@ -377,17 +603,12 @@
         }, delay);
       }
 
-      function explain(prefix, text){
-        safePrint("<strong style='color:#bffeff'>" + prefix + "</strong> — " + text);
-      }
-
-      // Helper: simulate a technical audit summary
       function auditSummary(depth){
         const base = [
           "Inizio audit: raccolta metadati...",
           "Analisi dipendenze e surface mapping...",
           "Controllo configurazioni note...",
-          "Esecuzione test di integrità sui moduli...",
+          "Esecuzione test di integrità sui moduli..."
         ];
         if(depth === "deep"){
           base.push("Esecuzione fuzzing simulato su endpoint critici...");
@@ -400,7 +621,6 @@
         return base;
       }
 
-      // Terminal commands
       input.addEventListener("keydown", function(e){
         if(e.key !== "Enter") return;
         const raw = input.value || "";
@@ -411,7 +631,6 @@
 
         const lower = cmd.toLowerCase();
 
-        // Root mode commands
         if(isRoot){
           switch(lower){
             case "help":
@@ -468,7 +687,6 @@
           return;
         }
 
-        // Normal mode commands
         switch(lower){
           case "help":
             safePrint("Comandi disponibili (EDU · Highkali):");
@@ -490,7 +708,13 @@
             safePrint("- attack surface : analisi superficie d'attacco");
             safePrint("- risk vector : valutazione vettori di rischio");
             safePrint("- vuln entropy : misura entropia vulnerabilità");
+            safePrint("- observer collapse : collasso stato quantistico");
             safePrint("- quantum state : descrizione stato quantistico");
+            safePrint("- oracle api : panoramica API concettuali");
+            safePrint("- edu courses : panoramica Highkali EDU");
+            safePrint("- premium info : info su terminale premium");
+            safePrint("- bounty info : info sul bug bounty interno");
+            safePrint("- whitepaper info : info sul framework xZDOS");
             break;
 
           case "stato":
@@ -587,7 +811,6 @@
             safePrint("Digita 'help' per i comandi root, 'exit' per uscire.");
             break;
 
-          // Highkali-specific commands (EDU + cybersec)
           case "highkali status":
             delayPrint([
               "Highkali — stato operativo:",
@@ -607,7 +830,7 @@
               "Esecuzione bounty scan (simulato)...",
               "Mappatura surface: 12 endpoint critici identificati",
               "Priorità assegnata: 3 high, 5 medium, 4 low",
-              "Suggerimento EDU: documentare CVE-like findings e seguire disclosure policy"
+              "Suggerimento EDU: documentare i risultati e seguire una disclosure policy responsabile."
             ], 150);
             break;
 
@@ -616,7 +839,7 @@
               "Analisi superficie d'attacco in corso...",
               "Endpoint esposti: /api/auth, /api/upload, /admin",
               "Vettori rilevati: input validation, auth misconfig, rate limiting",
-              "Raccomandazione: applicare WAF rules e review autenticazione"
+              "Raccomandazione: applicare WAF rules e review autenticazione."
             ], 150);
             break;
 
@@ -625,7 +848,7 @@
               "Valutazione vettori di rischio...",
               "Vettore 1: autenticazione debole (probabilità media · impatto alto)",
               "Vettore 2: input validation mancante (probabilità alta · impatto medio)",
-              "Mitigazioni: MFA, sanitizzazione input, test di regressione"
+              "Mitigazioni: MFA, sanitizzazione input, test di regressione."
             ], 150);
             break;
 
@@ -634,7 +857,7 @@
               "Calcolo entropia delle vulnerabilità...",
               "Metriche raccolte: varietà, frequenza, impatto",
               "Entropia risultante: 0.27 (bassa) — sistema relativamente stabile",
-              "Nota EDU: entropia bassa non esclude vulnerabilità critiche; continuare monitoraggio"
+              "Nota EDU: entropia bassa non esclude vulnerabilità critiche; continuare monitoraggio."
             ], 150);
             break;
 
@@ -654,18 +877,66 @@
             ], 150);
             break;
 
+          case "oracle api":
+            delayPrint([
+              "Oracle API — panoramica concettuale:",
+              "Endpoint esemplificativi:",
+              "• /oracle/risk-vector",
+              "• /oracle/entropy",
+              "• /oracle/audit-sim",
+              "• /oracle/attack-surface",
+              "Nota EDU: l’API è pensata come interfaccia programmabile all’oracolo xZDOS."
+            ], 150);
+            break;
+
+          case "edu courses":
+            delayPrint([
+              "Highkali EDU — panoramica corsi:",
+              "• Introduzione all’audit e superfici d’attacco",
+              "• Threat modeling e analisi scenari",
+              "• Bug bounty mindset e metodologia",
+              "• Metodologia Highkali per audit strutturati"
+            ], 150);
+            break;
+
+          case "premium info":
+            delayPrint([
+              "xZDOS Premium Terminal — informazioni:",
+              "• Comandi avanzati e analisi estese",
+              "• Possibilità di esportare output",
+              "• Modalità root avanzata simulata",
+              "Nota EDU: la distinzione free/premium è concettuale e legata a funzionalità aggiuntive."
+            ], 150);
+            break;
+
+          case "bounty info":
+            delayPrint([
+              "Bug Bounty interno — panoramica:",
+              "• Regole chiare e disclosure responsabile",
+              "• Badge e livelli per contributori",
+              "• Leaderboard simbolica per attività",
+              "Suggerimento: usare Discord per coordinare segnalazioni e revisioni."
+            ], 150);
+            break;
+
+          case "whitepaper info":
+            delayPrint([
+              "Whitepaper xZDOS — contenuti chiave:",
+              "• Architettura moduli e flussi",
+              "• Assiomi di sicurezza e governance",
+              "• Metodologia Highkali per audit",
+              "• Modello di servizio e API concettuali"
+            ], 150);
+            break;
+
           default:
             safePrint("Comando non riconosciuto. Digita 'help'.");
         }
       });
 
-      // Focus input on load
       input.focus();
-
-      // Accessibility: allow clicking terminal to focus input
       terminal.addEventListener("click", () => input.focus());
     })();
   </script>
 </body>
 </html>
-
