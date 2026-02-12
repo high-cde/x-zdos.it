@@ -1,16 +1,9 @@
 {
-  "name": "X-ZDOS ENTERPRISE",
-  "short_name": "X-ZDOS",
+  "name": "XCLOUD × ZDOS",
+  "short_name": "XZDOS",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
+  "background_color": "#000000",
   "theme_color": "#00ff88",
-  "description": "Distributed Synthetic Network · Agentive Intelligence Stack",
-  "icons": [
-    {
-      "src": "moltbook-core.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ]
+  "icons": []
 }
