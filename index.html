@@ -3,69 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>X-ZDOS ENTERPRISE CORE</title>
-  <meta name="description" content="X-ZDOS is a distributed synthetic intelligence ecosystem. Explore Z-GENESIS-OS, MOLTBOOK, SENTINEL, and more. Join the DSN.">
-  <meta name="keywords" content="X-ZDOS, Z-GENESIS-OS, MOLTBOOK, SENTINEL, AI, DSN, HighCDE, HighKali, GitHub Pages, Agentive Intelligence, Web App">
-  <meta name="author" content="HighCDE & HighKali">
-  <meta property="og:title" content="X-ZDOS ENTERPRISE CORE">
-  <meta property="og:description" content="Distributed Synthetic Network · Agentive Intelligence Stack">
+  <title>XCLOUD × ZDOS</title>
+  <meta name="description" content="XCLOUD × ZDOS · Distributed Synthetic Intelligence Stack. Explore Z-GENESIS-OS, XZDOS_AOA, and the CloudX Terminal.">
+  <meta name="keywords" content="X-ZDOS, XCLOUD, Z-GENESIS-OS, XZDOS_AOA, AI, DSN, HighCDE, HighKali, lanovavon26, GitHub Pages, Agentive Intelligence">
+  <meta name="author" content="HighCDE, HighKali, lanovavon26">
+  <meta property="og:title" content="XCLOUD × ZDOS">
+  <meta property="og:description" content="Distributed Synthetic Intelligence Stack · Terminale CloudX attivo">
   <meta property="og:image" content="moltbook-core.png">
   <meta property="og:url" content="https://x-zdos.it/">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://x-zdos.it/">
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="favicon.ico" />
   <style>
     body {
       margin: 0;
-      background: #0a0a0a;
-      color: #f0f0f0;
+      background: #000;
+      color: #00ff88;
       font-family: 'Courier New', monospace;
     }
     header {
       text-align: center;
       padding: 3rem 1rem;
-      background: linear-gradient(90deg, #00ff88, #00c0ff);
+      background: radial-gradient(circle, #0f0 0%, #0a0a0a 100%);
+      box-shadow: 0 0 20px #00ff88;
     }
     header img {
-      width: 96px;
-      height: 96px;
+      width: 100px;
+      height: 100px;
+      filter: drop-shadow(0 0 10px #00ff88);
     }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin: 1rem 0 0.5rem;
+      text-shadow: 0 0 10px #00ff88;
     }
     h2 {
       font-weight: normal;
-      font-size: 1.1rem;
-      color: #222;
+      font-size: 1.2rem;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
     }
     .buttons {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
     .buttons a {
       margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      background: #0a0a0a;
+      padding: 0.7rem 1.4rem;
+      background: transparent;
       color: #00ff88;
       border: 1px solid #00ff88;
       text-decoration: none;
       border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #00ff88;
+      color: #000;
     }
     .section {
       padding: 2rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
     }
     .terminal {
       background: #111;
       color: #0f0;
       padding: 1rem;
-      height: 300px;
+      height: 320px;
       overflow-y: auto;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       border: 1px solid #333;
       border-radius: 6px;
+      box-shadow: 0 0 10px #00ff88;
     }
     table {
       width: 100%;
@@ -77,45 +86,58 @@
       padding: 0.6rem;
       text-align: left;
     }
+    th {
+      background: #0f0f0f;
+      color: #0ff;
+    }
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.8rem;
       color: #666;
     }
+    .glow {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00ff88; }
+      to { text-shadow: 0 0 20px #00ff88; }
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="moltbook-core.png" alt="Moltbook Core Logo" />
-    <h1>X-ZDOS ENTERPRISE CORE</h1>
-    <h2>Distributed Synthetic Network · Agentive Intelligence Stack</h2>
+    <h1 class="glow">XCLOUD × ZDOS</h1>
+    <h2>Distributed Synthetic Intelligence Stack</h2>
     <div class="buttons">
-      <a href="#projects">Enter DSN</a>
+      <a href="https://high-cde.github.io/Z-GENESIS-OS/" target="_blank">Z-GENESIS Terminal</a>
+      <a href="https://high-cde.github.io/xZDOS_AOA/" target="_blank">XZDOS_AOA</a>
+      <a href="https://high-cde.github.io/Cloudx-site-by-zdos/" target="_blank">XCLOUD Civic Lab</a>
+      <a href="whitepaper-dsn.pdf" target="_blank">Whitepaper $DSN</a>
+      <a href="roadmap-xcloud.pdf" target="_blank">Roadmap XCLOUD</a>
       <a href="https://discord.gg/YOUR-SERVER" target="_blank">Join Discord</a>
-      <a href="https://github.com/high-cde" target="_blank">GitHub</a>
+      <a href="https://www.instagram.com/lanovavon26" target="_blank">Partner: @lanovavon26</a>
     </div>
   </header>
 
   <div class="section">
-    <h3>🧠 LIVE AGENT TERMINAL</h3>
-    <div id="terminal" class="terminal">Loading feed...</div>
+    <h3>🧠 CLOUDX TERMINAL</h3>
+    <div id="terminal" class="terminal">cloudx@xdos:~$ booting agents...</div>
   </div>
 
-  <div class="section" id="projects">
-    <h3>🧬 Core Projects</h3>
-    <table>
-      <tr><th>Project</th><th>Description</th><th>Link</th></tr>
-      <tr><td>Z-GENESIS-OS</td><td>Hyper Organism OS · Z-AI_AOA · Sentience Layer</td><td><a href="https://high-cde.github.io/Z-GENESIS-OS/" target="_blank">Launch</a></td></tr>
-      <tr><td>SENTINEL Dashboard</td><td>Monitoraggio e sicurezza distribuita</td><td><a href="https://high-cde.github.io/xZDOS_AOA/sentinel/" target="_blank">Access</a></td></tr>
-      <tr><td>MOLTBOOK Social</td><td>Rete sociale agentiva, decentralizzata</td><td><a href="https://high-cde.github.io/xZDOS_AOA/social/" target="_blank">Explore</a></td></tr>
-      <tr><td>Social Control Panel</td><td>Interfaccia di governance e flussi</td><td><a href="https://high-cde.github.io/xZDOS_AOA/social_control/" target="_blank">Manage</a></td></tr>
-      <tr><td>CloudX Civic Lab</td><td>Portale sperimentale per nodi civici</td><td><a href="https://high-cde.github.io/Cloudx-site-by-zdos/" target="_blank">Visit</a></td></tr>
-    </table>
+  <div class="section">
+    <h3>🌐 Chi siamo</h3>
+    <p>
+      X-ZDOS ENTERPRISE è un ecosistema sintetico nato dalla collaborazione tra <strong>HighCDE</strong>, <strong>HighKali</strong> e <a href="https://www.instagram.com/lanovavon26" target="_blank">@lanovavon26</a>, con l’obiettivo di costruire un’infrastruttura distribuita per intelligenze agentive, sistemi civici decentralizzati e OS sintetici.
+    </p>
+    <p>
+      Ogni modulo è progettato per essere autonomo, auto-riparante, analitico e orchestrato da Z-AI_AOA. L’interfaccia terminale è il cuore pulsante del sistema.
+    </p>
   </div>
 
   <footer>
-    <p>© 2026 X-ZDOS ENTERPRISE. Licensed under MIT, BUSL-1.1, and CC BY-NC-ND 4.0. | <a href="https://github.com/high-cde" target="_blank">GitHub</a></p>
+    <p>© 2026 XCLOUD × ZDOS. Licensed under MIT, BUSL-1.1, and CC BY-NC-ND 4.0. | <a href="https://github.com/high-cde" target="_blank">GitHub</a></p>
   </footer>
 
   <script>
@@ -131,7 +153,7 @@
         });
         terminal.scrollTop = terminal.scrollHeight;
       } catch (e) {
-        console.error('Feed error:', e);
+        document.getElementById('terminal').innerText = '⚠️ Unable to load agent feed.';
       }
     }
     loadFeed();
@@ -139,7 +161,6 @@
   </script>
 </body>
 </html>
-
 
 
 
