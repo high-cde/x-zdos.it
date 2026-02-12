@@ -1,0 +1,134 @@
+ /* === BASE === */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #00ff88;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+  background: #000;
+  border-bottom: 1px solid #00ff88;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.5rem;
+  color: #cc00ff;
+  text-shadow: 0 0 8px #cc00ff;
+}
+nav a {
+  margin-left: 1.5rem;
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #ffffff;
+}
+
+/* === HERO === */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #0a0a0a, #111);
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #00ff88;
+  text-shadow: 0 0 12px #00ff88;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* === TERMINALE === */
+.terminal {
+  background: #111;
+  border: 1px solid #00ff88;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 0 12px #00ff88;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.terminal pre {
+  color: #00ff88;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+/* === CARD MODULARI === */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.card {
+  background: #000;
+  border: 1px solid #00ff88;
+  padding: 1.5rem;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00ff88;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #cc00ff;
+}
+.card h3 {
+  margin-top: 0;
+  color: #cc00ff;
+  text-shadow: 0 0 6px #cc00ff;
+}
+.card p {
+  color: #ccc;
+}
+.card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #00ffff;
+  border-bottom: 1px dashed #00ffff;
+  text-decoration: none;
+}
+.card a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin: 3rem 0 1rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav a {
+    margin: 0.5rem 0;
+  }
+}

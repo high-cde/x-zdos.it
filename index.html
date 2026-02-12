@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XCLOUD × ZDOS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-  <style>
-    body { background: #0a0a0a; color: #00ff88; font-family: monospace; margin: 0; padding: 2rem; }
-    h1, h2 { text-align: center; }
-    .terminal { background: #111; border: 1px solid #00ff88; padding: 1rem; margin: 2rem 0; }
-    .card { border: 1px solid #00ff88; padding: 1rem; margin: 1rem 0; background: #000; }
-    .card h3 { margin-top: 0; color: #0ff; }
-    a { color: #00ffff; text-decoration: none; }
-    footer { text-align: center; font-size: 0.8rem; color: #666; margin-top: 3rem; }
-  </style>
 </head>
 <body>
-  <h1>XCLOUD × ZDOS</h1>
-  <div class="terminal" id="terminal">
-    cloudx@xdos:~$ booting agent XZDOS_AOA...<br>
-    [23:37] [XZDOS_AOA]: Terminale operativo<br>
-    [23:37] [AGENT_KALI]: Z-AI_AOA sincronizzato<br>
-  </div>
+  <header>
+    <div class="logo">X-ZDOS</div>
+    <nav>
+      <a href="#moduli">Moduli</a>
+      <a href="#terminal">Terminale</a>
+      <a href="#whitepaper">Whitepaper</a>
+      <a href="#about">Chi siamo</a>
+    </nav>
+  </header>
 
-  <div class="card">
-    <h3>Z-GENESIS-OS</h3>
-    <p>Sistema operativo sintetico, auto-riparante, orchestrato da Z-AI_AOA.</p>
-    <a href="https://high-cde.github.io/Z-GENESIS-OS/" target="_blank">Vai al terminale</a>
-  </div>
+  <section class="hero">
+    <h1>XCLOUD × ZDOS</h1>
+    <p>Infrastruttura sintetica per agenti distribuiti, sistemi civici e intelligenze autonome.</p>
+  </section>
 
-  <div class="card">
-    <h3>XZDOS_AOA</h3>
-    <p>Stack agentivo: social, sentinel, controllo, runtime distribuito.</p>
-    <a href="https://high-cde.github.io/xZDOS_AOA/" target="_blank">Accedi</a>
-  </div>
+  <section id="terminal" class="terminal">
+    <h2>Terminale xCLOUD</h2>
+    <pre>
+cloudx@xdos:~$ booting agent XZDOS_AOA...
+[23:37] [XZDOS_AOA]: Terminale operativo
+[23:37] [AGENT_KALI]: Z-AI_AOA sincronizzato
+    </pre>
+  </section>
 
-  <div class="card">
-    <h3>XCLOUD Civic Lab</h3>
-    <p>Fork industriale del Bitrix24 DevHub, rebrandizzato per l’ecosistema CloudX × ZDOS. Include DSN Layer, Portal Fusion, Nexus, Terminale e pipeline enterprise-ready.</p>
-    <a href="https://high-cde.github.io/Cloudx-site-by-zdos/" target="_blank">Esplora</a>
-  </div>
+  <section id="moduli" class="grid">
+    <div class="card">
+      <h3>Z-GENESIS-OS</h3>
+      <p>Sistema operativo sintetico, auto-riparante, orchestrato da Z-AI_AOA.</p>
+      <a href="https://high-cde.github.io/Z-GENESIS-OS/" target="_blank">Vai al terminale</a>
+    </div>
+    <div class="card">
+      <h3>XZDOS_AOA</h3>
+      <p>Stack agentivo: social, sentinel, controllo, runtime distribuito.</p>
+      <a href="https://high-cde.github.io/xZDOS_AOA/" target="_blank">Accedi</a>
+    </div>
+    <div class="card">
+      <h3>XCLOUD Civic Lab</h3>
+      <p>Fork industriale del Bitrix24 DevHub, rebrandizzato per l’ecosistema CloudX × ZDOS.</p>
+      <a href="https://high-cde.github.io/Cloudx-site-by-zdos/" target="_blank">Esplora</a>
+    </div>
+  </section>
 
-  <div class="card">
+  <section id="whitepaper" class="card">
     <h3>Whitepaper & Roadmap</h3>
     <p>Scopri la visione del token $DSN e le potenzialità di XCLOUD.</p>
     <a href="whitepaper-dsn.pdf" target="_blank">Whitepaper $DSN</a> |
     <a href="roadmap-xcloud.pdf" target="_blank">Roadmap XCLOUD</a>
-  </div>
+  </section>
 
-  <div class="card">
+  <section id="about" class="card">
     <h3>Chi siamo</h3>
     <p>X-ZDOS ENTERPRISE è un ecosistema sintetico nato dalla collaborazione tra <strong>HighCDE</strong>, <strong>HighKali</strong> e <a href="https://www.instagram.com/lanovavon26" target="_blank">@lanovavon26</a>.</p>
-  </div>
+  </section>
 
   <footer>
     © 2026 XCLOUD × ZDOS · MIT / BUSL-1.1 / CC BY-NC-ND 4.0 · <a href="https://github.com/high-cde" target="_blank">GitHub</a>
