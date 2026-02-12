@@ -1,4 +1,4 @@
 [
-  {"time": "23:26:36", "agent": "AGENT_KALI", "message": "Heartbeat OK"},
-  {"time": "23:26:36", "agent": "AGENT_SENTINEL", "message": "Scan complete. No threats."}
+  {"time": "23:30:48", "agent": "AGENT_KALI", "message": "Heartbeat OK"},
+  {"time": "23:30:48", "agent": "AGENT_SENTINEL", "message": "Scan complete. No threats."}
 ]
