@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    color: #e6e6e6;
+    font-family: "Segoe UI", sans-serif;
+}
+
+header {
+    padding: 30px;
+    text-align: center;
+    background: #111;
+    border-bottom: 1px solid #333;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2em;
+    color: #00e0ff;
+}
+
+.subtitle {
+    margin-top: 5px;
+    color: #aaa;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #141414;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #222;
+    border-radius: 8px;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #00c8ff;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    color: #e6e6e6;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.checkbox-group label {
+    display: block;
+    margin: 5px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #00c8ff;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00e0ff;
+}
+
+.output pre {
+    background: #1b1b1b;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    white-space: pre-wrap;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #222;
+    margin-top: 40px;
+}

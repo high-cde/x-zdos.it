@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>xZDOS_AOA — Social Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>xZDOS_AOA — Social Control Panel</h1>
+        <p class="subtitle">Cabina di regia narrativa dell’ecosistema xZDOS</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Vision & Tone</h2>
+
+            <label>Vision Mode</label>
+            <select id="visionMode">
+                <option value="visionario_puro">Visionario Puro</option>
+                <option value="visionario_tecnico" selected>Visionario Tecnico</option>
+                <option value="visionario_istituzionale">Visionario Istituzionale</option>
+            </select>
+
+            <label>Tono</label>
+            <select id="tone">
+                <option value="freddo">Freddo</option>
+                <option value="equilibrato" selected>Equilibrato</option>
+                <option value="caldo">Caldo</option>
+            </select>
+
+            <label>Densità Concettuale</label>
+            <input type="range" id="density" min="1" max="3" value="3">
+        </section>
+
+        <section class="card">
+            <h2>Safety & Boundaries</h2>
+
+            <label>Livello di Prudenza</label>
+            <select id="prudence">
+                <option value="rigido">Rigido</option>
+                <option value="alto" selected>Alto</option>
+                <option value="medio">Medio</option>
+            </select>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" checked> Politica (solo analisi)</label>
+                <label><input type="checkbox" checked> Bio/Medicina (solo analisi)</label>
+                <label><input type="checkbox" checked> Nucleare (solo analisi)</label>
+                <label><input type="checkbox" checked> Cybersecurity (difensiva)</label>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Content Engine</h2>
+
+            <label>Tipo di contenuto</label>
+            <select id="contentType">
+                <option value="announce">Annuncio</option>
+                <option value="vision" selected>Visione</option>
+                <option value="behind">Dietro le quinte</option>
+                <option value="manifesto">Manifesto</option>
+            </select>
+
+            <label>Oggetto</label>
+            <input type="text" id="subject" placeholder="Es: Nuovo modulo xZDOS">
+
+            <label>Dettagli</label>
+            <textarea id="details" placeholder="Aggiungi dettagli narrativi..."></textarea>
+
+            <button id="generate">Genera Contenuto</button>
+        </section>
+
+        <section class="card output">
+            <h2>Output Generato</h2>
+            <pre id="outputBox">Nessun contenuto generato.</pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>xZDOS_AOA — Social Control Panel · GitHub Pages</p>
+    </footer>
+
+    <script src="controller.js"></script>
+</body>
+</html>
