@@ -16,20 +16,18 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-black">
 
-    <!-- TOP HEADER -->
     <header class="border-b border-emerald-500/20 bg-black/80 backdrop-blur sticky top-0 z-50 px-6 py-3 flex justify-between items-center text-xs">
         <div class="flex items-center gap-3">
             <span class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
             <span class="font-bold text-emerald-400 tracking-wider">ZDOS // SUPREME ENTERPRISE</span>
         </div>
-        <div>
-            <button class="px-3 py-1 rounded bg-emerald-950/50 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-900 transition">☰ MENU</button>
+        <div class="flex gap-4">
+            <a href="enet.html" class="text-emerald-400 hover:underline">eNET</a>
+            <button class="px-3 py-1 rounded bg-emerald-950/50 border border-emerald-500/30 text-emerald-300">☰ MENU</button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <main class="max-w-7xl mx-auto px-6 py-8 flex-grow space-y-8 w-full">
-        
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div class="space-y-4">
                 <span class="text-[10px] uppercase tracking-widest px-2.5 py-1 rounded badge-cyan font-bold">ZCLIPPER & ZDOS ORGANISM CORE</span>
@@ -37,162 +35,42 @@
                     Moduli web ZDOS in evoluzione.
                 </h1>
                 <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
-                    Shell eNET locale con workspace autenticati, missioni zFLOW e gateway Organism configurabile. Non include una rete mesh 80.24 attiva o una distro ZDOS installabile.
+                    Shell eNET locale con workspace autenticati, missioni zFLOW e gateway Organism configurabile.
                 </p>
                 <div class="flex flex-wrap gap-3 pt-2">
-                    <a href="#" class="px-4 py-2 rounded bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs transition shadow-lg">ENTRA NEL RESEARCH LAB →</a>
+                    <a href="enet.html" class="px-4 py-2 rounded bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs transition">ENTRA NEL RESEARCH LAB →</a>
                     <a href="https://high-cde.github.io/VelvetHub/" target="_blank" class="px-4 py-2 rounded bg-black border border-emerald-500/50 text-emerald-400 hover:bg-emerald-950/30 text-xs transition">VELVETHUB 18+ ↗</a>
-                    <a href="#" class="px-4 py-2 rounded bg-black border border-slate-700 text-slate-300 hover:bg-slate-900 text-xs transition">ESPLORA eNET →</a>
+                    <a href="enet.html" class="px-4 py-2 rounded bg-black border border-slate-700 text-slate-300 hover:bg-slate-900 text-xs transition">ESPLORA eNET →</a>
                 </div>
             </div>
 
-            <!-- CANVAS ANIMATION PREVIEW -->
             <div class="enterprise-box rounded-xl p-4 flex flex-col items-center justify-center h-64 relative">
                 <canvas id="netCanvas" class="absolute inset-0 w-full h-full opacity-60"></canvas>
                 <div class="relative z-10 text-center pointer-events-none mt-20">
-                    <p class="text-[11px] text-emerald-400">Animazione canvas decorativa · nessun dato o modello AI collegato</p>
+                    <p class="text-[11px] text-emerald-400">Animazione canvas decorativa · Nodo Garivalda</p>
                 </div>
             </div>
         </div>
-
-        <!-- SPECIFICHE & PRESTAZIONI -->
-        <div class="space-y-4 pt-4">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-2 text-xs">
-                <span class="font-bold text-slate-300">📊 Specifiche & Prestazioni (Apri Console zLLM & OpenClaw ↗)</span>
-                <span class="text-[10px] text-slate-500 uppercase">STATO IMPLEMENTAZIONE</span>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-xs font-bold text-cyan-400">Non misurato</span>
-                    <h3 class="text-sm font-bold text-white">ZVM / ZLang</h3>
-                    <p class="text-[11px] text-slate-400">Runtime e benchmark non presenti in questa copia.</p>
-                    <div class="space-y-1 text-[11px] text-emerald-400 pt-2 border-t border-slate-800">
-                        <p>▸ Assenza di Garbage Collector</p>
-                        <p>▸ Configurazione bare-metal #![no_std]</p>
-                        <p>▸ Isolamento totale in memoria sandbox</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-xs font-bold text-amber-400">Non disponibile</span>
-                    <h3 class="text-sm font-bold text-white">Orchestrazione</h3>
-                    <p class="text-[11px] text-slate-400">Nessuna metrica uptime o orchestratore verificato. È presente una bozza API per missioni.</p>
-                    <div class="pt-4 border-t border-slate-800 text-[11px] text-amber-500">
-                        <p>▸ Non implementato</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-xs font-bold text-red-400">Non verificato</span>
-                    <h3 class="text-sm font-bold text-white">Sicurezza operativa</h3>
-                    <p class="text-[11px] text-slate-400">Monitoraggio, threat intelligence e controlli di sicurezza di runtime non sono implementati.</p>
-                    <div class="pt-4 border-t border-slate-800 text-[11px] text-red-400">
-                        <p>▸ Nessun risultato di scansione disponibile</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ARCHITETTURA & PROGETTI DELL'ECOSYSTEM -->
-        <div class="space-y-4 pt-4">
-            <div class="flex justify-between items-center border-b border-slate-800 pb-2 text-xs">
-                <span class="font-bold text-slate-300">⚙️ Architettura & Progetti dell'Ecosystem</span>
-                <span class="text-[10px] text-slate-500 uppercase">PAGINE E CONCETTI · NON PRODUZIONE</span>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- P1 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-[9px] uppercase px-2 py-0.5 rounded badge-amber font-bold">CONCETTO</span>
-                    <h3 class="text-sm font-bold text-white">ZDOS Runtime</h3>
-                    <p class="text-[11px] text-slate-400">Runtime operativo non incluso in questa copia.</p>
-                    <div class="pt-4 border-t border-slate-800 text-[11px] text-amber-500">
-                        <p>▸ Non configurato</p>
-                    </div>
-                </div>
-
-                <!-- P2 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-[9px] uppercase px-2 py-0.5 rounded badge-cyan font-bold">WORKSPACE API</span>
-                    <h3 class="text-sm font-bold text-white">xCLOUD-by-zdos & zclipper ↗</h3>
-                    <p class="text-[11px] text-slate-400">Missioni persistenti e registro eventi con autenticazione e ruoli; richiede PostgreSQL e OIDC configurati.</p>
-                    <div class="pt-4 border-t border-slate-800 text-[11px] text-cyan-400">
-                        <p>▸ Nessun agente AI configurato</p>
-                    </div>
-                </div>
-
-                <!-- P3 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-[9px] uppercase px-2 py-0.5 rounded badge-amber font-bold">LINK ESTERNO · NON VERIFICATO</span>
-                    <h3 class="text-sm font-bold text-white">VelvetHub</h3>
-                    <p class="text-[11px] text-slate-400">Pagina di presentazione separata; disponibilità, AI, VR e streaming non verificati da questa copia.</p>
-                    <div class="pt-4 border-t border-slate-800 text-[11px] text-amber-500">
-                        <p>▸ Nessuna telemetria disponibile</p>
-                    </div>
-                </div>
-
-                <!-- P4 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-[9px] uppercase px-2 py-0.5 rounded badge-amber font-bold">ON-CHAIN DISATTIVATO</span>
-                    <h3 class="text-sm font-bold text-white">DSN TokenAI Wallet & Miner ↗</h3>
-                    <p class="text-[11px] text-slate-400">Il workbench esegue un benchmark PoW SHA-256 locale; wallet, chain, saldo e ricompense non sono configurati.</p>
-                </div>
-
-                <!-- P5 -->
-                <div class="enterprise-box p-5 rounded-xl space-y-3">
-                    <span class="text-[9px] uppercase px-2 py-0.5 rounded badge-cyan font-bold">eNET · STATO REALE</span>
-                    <h3 class="text-sm font-bold text-white">Rete di servizi ZDOS ↗</h3>
-                    <p class="text-[11px] text-slate-400">Shell same-origin e pagine offline. Peer discovery, rete 80.24 e zComm non sono ancora implementati.</p>
-                </div>
-            </div>
-        </div>
-
     </main>
 
-    <!-- SCRIPT CANVAS ANIMATION -->
     <script>
         const canvas = document.getElementById('netCanvas');
         const ctx = canvas.getContext('2d');
-        function resize() {
-            canvas.width = canvas.parentElement.clientWidth;
-            canvas.height = canvas.parentElement.clientHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        const nodes = Array.from({length: 15}, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            vx: (Math.random() - 0.5) * 0.8,
-            vy: (Math.random() - 0.5) * 0.8
-        }));
-
+        function resize() { canvas.width = canvas.parentElement.clientWidth; canvas.height = canvas.parentElement.clientHeight; }
+        window.addEventListener('resize', resize); resize();
+        const nodes = Array.from({length: 15}, () => ({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8 }));
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeStyle = 'rgba(0, 255, 136, 0.15)';
-            ctx.fillStyle = '#00ff88';
-
+            ctx.strokeStyle = 'rgba(0, 255, 136, 0.15)'; ctx.fillStyle = '#00ff88';
             nodes.forEach((n, i) => {
                 n.x += n.vx; n.y += n.vy;
                 if(n.x < 0 || n.x > canvas.width) n.vx *= -1;
                 if(n.y < 0 || n.y > canvas.height) n.vy *= -1;
-
-                ctx.beginPath();
-                ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
-                ctx.fill();
-
+                ctx.beginPath(); ctx.arc(n.x, n.y, 2, 0, Math.PI * 2); ctx.fill();
                 for(let j = i + 1; j < nodes.length; j++) {
                     const m = nodes[j];
-                    const dist = Math.hypot(n.x - m.x, n.y - m.y);
-                    if(dist < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(n.x, n.y);
-                        ctx.lineTo(m.x, m.y);
-                        ctx.stroke();
+                    if(Math.hypot(n.x - m.x, n.y - m.y) < 100) {
+                        ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(m.x, m.y); ctx.stroke();
                     }
                 }
             });

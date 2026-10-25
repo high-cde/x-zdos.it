@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZDOS // eNET - Rete di Servizi</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'JetBrains Mono', monospace; background-color: #05070a; color: #00ff88; overflow-x: hidden; }
+        .enterprise-box { background: rgba(10, 15, 24, 0.9); border: 1px solid rgba(0, 255, 136, 0.2); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-black">
+
+    <header class="border-b border-emerald-500/20 bg-black/80 backdrop-blur sticky top-0 z-50 px-6 py-3 flex justify-between items-center text-xs">
+        <div class="flex items-center gap-3">
+            <span class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+            <span class="font-bold text-emerald-400 tracking-wider">ZDOS · eNET</span>
+        </div>
+        <div class="flex gap-4 text-slate-300">
+            <a href="index.html" class="hover:text-emerald-400">Home</a>
+            <a href="https://high-cde.github.io/VelvetHub/" target="_blank" class="hover:text-emerald-400">VelvetHub 18+</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8 flex-grow space-y-8 w-full">
+        <div>
+            <span class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">RETE LOCALE · INTERFACCIA E SERVIZI ZDOS</span>
+            <h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight mt-1">
+                eNET, la rete di servizi ZDOS.
+            </h1>
+            <p class="text-slate-400 text-xs md:text-sm mt-2">
+                Questa web app porta sullo stesso host le pagine ZDOS, le API workspace e il gateway Organism configurabile.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Box ZComm Integrato -->
+            <div class="enterprise-box p-5 rounded-xl space-y-3 border-emerald-500/50">
+                <span class="text-xs font-bold text-emerald-400">ZCOMM SECURE NODE</span>
+                <h3 class="text-sm font-bold text-white">Rete 80.24 & zComm</h3>
+                <p class="text-[11px] text-slate-400">Protocollo E2E attivo, bioacustica rapaci, chat crittografata e chiamate WebRTC protette.</p>
+                <div class="pt-3">
+                    <a href="https://high-cde.github.io/Zcomm/" target="_blank" class="block w-full py-2 text-center rounded bg-emerald-900 hover:bg-emerald-800 text-emerald-300 text-xs font-bold transition">
+                        🔗 Apri ZComm Dashboard ↗
+                    </a>
+                </div>
+            </div>
+
+            <div class="enterprise-box p-5 rounded-xl space-y-3">
+                <span class="text-xs font-bold text-cyan-400">WORKSPACE API</span>
+                <h3 class="text-sm font-bold text-white">Workspace e zFLOW</h3>
+                <p class="text-[11px] text-slate-400">Missioni persistenti, ruoli, registro eventi e console admin dipendenti da PostgreSQL.</p>
+            </div>
+
+            <div class="enterprise-box p-5 rounded-xl space-y-3">
+                <span class="text-xs font-bold text-amber-400">DSN WALLET</span>
+                <h3 class="text-sm font-bold text-white">DSN TokenAI</h3>
+                <p class="text-[11px] text-slate-400">Il Wallet include una prova locale SHA-256 per misurare il calcolo sul nodo.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
