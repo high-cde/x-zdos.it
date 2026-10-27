@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZDOS // eNET - Rete di Servizi</title>
+    <meta name="zdos-kira-api-base" content="">
+    <link rel="stylesheet" href="kira-widget.css">
+    <script defer src="kira-widget.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -35,7 +38,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <!-- Box ZComm Integrato -->
             <div class="enterprise-box p-5 rounded-xl space-y-3 border-emerald-500/50">
                 <span class="text-xs font-bold text-emerald-400">ZCOMM SECURE NODE</span>
@@ -58,6 +61,13 @@
                 <span class="text-xs font-bold text-amber-400">DSN WALLET</span>
                 <h3 class="text-sm font-bold text-white">DSN TokenAI</h3>
                 <p class="text-[11px] text-slate-400">Il Wallet include una prova locale SHA-256 per misurare il calcolo sul nodo.</p>
+            </div>
+
+            <div class="enterprise-box p-5 rounded-xl space-y-3 border-cyan-500/40">
+                <span class="text-xs font-bold text-cyan-400">AI GATEWAY · K.I.R.A.</span>
+                <h3 class="text-sm font-bold text-white">Assistente ZDOS</h3>
+                <p class="text-[11px] text-slate-400">Invia richieste al provider AI configurato sul backend. La pagina mostra se gateway e inferenza sono davvero disponibili.</p>
+                <button type="button" onclick="document.querySelector('.kira-launcher')?.click()" class="w-full py-2 rounded bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold transition">APRI K.I.R.A. →</button>
             </div>
         </div>
     </main>
