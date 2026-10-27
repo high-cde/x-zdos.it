@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07100d" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Informazioni tecniche sui dati trattati dal portale x-zdos.it e dalla chat K.I.R.A."
+    />
+    <title>Dati e AI — x-zdos.it</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="x-zdos.it, home"
+          ><span class="brand-mark">XZ</span
+          ><span>x-zdos.it<span class="brand-sub">PORTALE ZDOS</span></span></a
+        >
+        <nav class="nav" aria-label="Navigazione principale">
+          <a href="index.html">Portale</a><a href="enet.html">eNET</a
+          ><a href="privacy.html" aria-current="page">Dati e AI</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      <section class="hero" aria-labelledby="privacy-title">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span> Trasparenza tecnica · preview
+          </div>
+          <h1 id="privacy-title">Dati e uso di <em>K.I.R.A.</em></h1>
+          <p class="lead">
+            Questa pagina descrive il comportamento tecnico previsto dal codice
+            della preview. Non è un’informativa legale completa e non
+            sostituisce le informazioni del gestore e del provider AI.
+          </p>
+        </div>
+        <aside class="status-card">
+          <h2>Stato della chat</h2>
+          <p class="muted small">
+            Nella preview l’origine API è vuota e l’invio è disabilitato. La
+            chat diventa utilizzabile solo dopo una configurazione HTTPS
+            esplicita.
+          </p>
+        </aside>
+      </section>
+      <section class="section">
+        <div class="cards-2">
+          <article class="truth-card is">
+            <h3>Dati raccolti dalla pagina</h3>
+            <p>
+              Le pagine sono statiche e non implementano account, analytics,
+              cookie o salvataggio locale della chat. La verifica di salute
+              invia una richiesta GET soltanto quando è configurata un’origine
+              API.
+            </p>
+          </article>
+          <article class="truth-card is-not">
+            <h3>Messaggi inviati a K.I.R.A.</h3>
+            <p>
+              Quando la chat è attivata, il prompt viene inviato al backend
+              configurato e da lì al provider AI. Il provider può trattare il
+              testo secondo il proprio contratto e le impostazioni del gestore.
+              Non inviare segreti o dati riservati.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Conservazione</h3>
+            <p>
+              La pagina non conserva la conversazione. Prima di attivare il
+              servizio pubblico, il gestore deve indicare retention, logging,
+              provider e modalità di cancellazione effettivamente adottate.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Informazioni da completare</h3>
+            <p>
+              Il titolare del sito, i recapiti per le richieste privacy, la
+              giurisdizione e l’informativa legale devono essere forniti dal
+              gestore prima del rilascio in produzione.
+            </p>
+          </article>
+        </div>
+        <div class="notice">
+          Questa pagina è una nota di trasparenza tecnica per la preview. Non
+          presentarla come informativa privacy definitiva finché il gestore non
+          ha verificato e completato le informazioni richieste.
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <span>x-zdos.it · preview</span>
+        <div class="footer-links">
+          <a href="index.html">Portale</a><a href="enet.html">eNET</a
+          ><a
+            href="https://github.com/high-cde/x-zdos.it"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Codice sorgente</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

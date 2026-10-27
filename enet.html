@@ -1,76 +1,281 @@
-<!DOCTYPE html>
-<html lang="it" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZDOS // eNET - Rete di Servizi</title>
-    <meta name="zdos-kira-api-base" content="">
-    <link rel="stylesheet" href="kira-widget.css">
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07100d" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Directory eNET dei servizi, repository e moduli sperimentali collegati all’ecosistema ZDOS."
+    />
+    <meta name="zdos-kira-api-base" content="" />
+    <title>eNET — Directory ZDOS</title>
+    <link rel="stylesheet" href="site.css" />
+    <script defer src="site.js"></script>
     <script defer src="kira-widget.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'JetBrains Mono', monospace; background-color: #05070a; color: #00ff88; overflow-x: hidden; }
-        .enterprise-box { background: rgba(10, 15, 24, 0.9); border: 1px solid rgba(0, 255, 136, 0.2); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-black">
-
-    <header class="border-b border-emerald-500/20 bg-black/80 backdrop-blur sticky top-0 z-50 px-6 py-3 flex justify-between items-center text-xs">
-        <div class="flex items-center gap-3">
-            <span class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
-            <span class="font-bold text-emerald-400 tracking-wider">ZDOS · eNET</span>
-        </div>
-        <div class="flex gap-4 text-slate-300">
-            <a href="index.html" class="hover:text-emerald-400">Home</a>
-            <a href="https://high-cde.github.io/VelvetHub/" target="_blank" class="hover:text-emerald-400">VelvetHub 18+</a>
-        </div>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="x-zdos.it, home">
+          <span class="brand-mark">XZ</span>
+          <span>x-zdos.it<span class="brand-sub">PORTALE ZDOS</span></span>
+        </a>
+        <nav class="nav" aria-label="Navigazione principale">
+          <a href="index.html">Portale</a>
+          <a href="enet.html" aria-current="page">eNET</a>
+          <a href="ecosystem.html">Ecosistema</a>
+          <a
+            class="repo-link"
+            href="https://github.com/high-cde/x-zdos.it"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Sorgente</a
+          >
+          <a class="nav-cta" href="index.html">Torna alla home</a>
+        </nav>
+      </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 py-8 flex-grow space-y-8 w-full">
+    <main class="shell">
+      <section class="hero" aria-labelledby="enet-title">
         <div>
-            <span class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold">RETE LOCALE · INTERFACCIA E SERVIZI ZDOS</span>
-            <h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight mt-1">
-                eNET, la rete di servizi ZDOS.
-            </h1>
-            <p class="text-slate-400 text-xs md:text-sm mt-2">
-                Questa web app porta sullo stesso host le pagine ZDOS, le API workspace e il gateway Organism configurabile.
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span> Directory · non è una rete di
+            trasporto
+          </div>
+          <h1 id="enet-title">eNET, la mappa dei <em>moduli ZDOS.</em></h1>
+          <p class="lead">
+            Un indice dei progetti collegati, delle loro funzioni e dei limiti
+            attuali. Ogni modulo resta separato: questa pagina non implica che i
+            servizi siano integrati o disponibili in produzione.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="#servizi"
+              >Vai ai servizi <span aria-hidden="true">↓</span></a
+            >
+            <button
+              class="button button-quiet"
+              type="button"
+              onclick="document.querySelector('.kira-launcher')?.click()"
+            >
+              Apri K.I.R.A.
+            </button>
+            <a class="button button-quiet" href="index.html"
+              >Torna al portale</a
+            >
+          </div>
+        </div>
+
+        <aside class="status-card" aria-labelledby="status-title">
+          <div class="eyebrow">Controllo dal client</div>
+          <h2 id="status-title" style="margin-top: 12px">Gateway K.I.R.A.</h2>
+          <div class="status-row">
+            <span class="status-label">Stato API</span>
+            <span class="status-pill" data-kira-status data-state="limited"
+              >API non configurata</span
+            >
+          </div>
+          <p class="muted small" data-kira-detail>
+            Il portale è un catalogo. Per usare l’assistente occorre configurare
+            un endpoint HTTPS e il provider sul server.
+          </p>
+          <button
+            class="button button-quiet"
+            type="button"
+            data-kira-refresh
+            style="margin-top: 12px"
+          >
+            Aggiorna stato
+          </button>
+        </aside>
+      </section>
+
+      <section class="section" id="servizi" aria-labelledby="services-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Componenti e responsabilità</div>
+            <h2 id="services-title">Cosa c’è nell’ecosistema.</h2>
+          </div>
+          <p>
+            Gli stati qui sotto descrivono la maturità dichiarata del singolo
+            progetto o ciò che è collegato a questa UI. Non sono certificazioni
+            di sicurezza o uptime.
+          </p>
+        </div>
+        <div class="service-grid">
+          <article class="card service-card">
+            <div class="card-kicker">AI gateway · runtime separato</div>
+            <h3>K.I.R.A.</h3>
+            <p>
+              Il widget del portale invia richieste all’API del backend
+              ZDOS-K.I.R.A. Il provider AI opera solo lato server. Il gateway
+              deve essere esposto via HTTPS e configurato con una chiave
+              server-side.
             </p>
+            <div class="card-bottom">
+              <span class="status-pill" data-kira-status data-state="limited"
+                >API non configurata</span
+              ><a
+                class="card-link"
+                href="https://github.com/high-cde/Zdos-K.I.R.A"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Codice backend ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-kicker">Comunicazione · progetto distinto</div>
+            <h3>ZComm</h3>
+            <p>
+              Repository separato per il client/servizio di comunicazione.
+              Questo portale non avvia sessioni, chiamate o chat e non verifica
+              qui le sue garanzie di cifratura.
+            </p>
+            <div class="card-bottom">
+              <span class="tag source">Sorgente separata</span
+              ><a
+                class="card-link"
+                href="https://github.com/high-cde/Zcomm"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repository ZComm ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-kicker">Sistema operativo · sperimentale</div>
+            <h3>ZDOS</h3>
+            <p>
+              Progetto OS x86_64 sperimentale, distinto dal portale web. Questa
+              UI non esegue il sistema, non installa pacchetti e non attesta
+              compatibilità hardware.
+            </p>
+            <div class="card-bottom">
+              <span class="tag experimental">Sperimentale</span
+              ><a
+                class="card-link"
+                href="https://github.com/high-cde/ZDOS"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repository ZDOS ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-kicker">Linguaggio · progetto separato</div>
+            <h3>ZLang</h3>
+            <p>
+              Linguaggio e toolkit bytecode collegati all’ecosistema. Il sito
+              non compila né esegue codice ZLang; vedere repository e test per
+              lo stato effettivo.
+            </p>
+            <div class="card-bottom">
+              <span class="tag experimental">Sviluppo</span
+              ><a
+                class="card-link"
+                href="https://github.com/high-cde/Zlang"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repository ZLang ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-kicker">Web application · non collegata qui</div>
+            <h3>ZDOS eNET Web App</h3>
+            <p>
+              Repository applicativo distinto con server, database e OIDC
+              documentati come prerequisiti. Login, workspace e funzioni admin
+              non sono forniti da queste pagine statiche.
+            </p>
+            <div class="card-bottom">
+              <span class="tag source">Backend separato</span
+              ><a
+                class="card-link"
+                href="https://github.com/high-cde/x-zdos-webapp"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repository web app ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-kicker">Runtime AI · configurazione esterna</div>
+            <h3>ZDOS Organism</h3>
+            <p>
+              Gateway/runtime separato. Le eventuali inferenze dipendono dalla
+              configurazione del modello sul server; il portale non dichiara
+              inferenza nativa ZLang.
+            </p>
+            <div class="card-bottom">
+              <span class="tag experimental">Da integrare</span
+              ><a
+                class="card-link"
+                href="https://github.com/high-cde/zdos-organism"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repository Organism ↗</a
+              >
+            </div>
+          </article>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            <!-- Box ZComm Integrato -->
-            <div class="enterprise-box p-5 rounded-xl space-y-3 border-emerald-500/50">
-                <span class="text-xs font-bold text-emerald-400">ZCOMM SECURE NODE</span>
-                <h3 class="text-sm font-bold text-white">Rete 80.24 & zComm</h3>
-                <p class="text-[11px] text-slate-400">Protocollo E2E attivo, bioacustica rapaci, chat crittografata e chiamate WebRTC protette.</p>
-                <div class="pt-3">
-                    <a href="https://high-cde.github.io/Zcomm/" target="_blank" class="block w-full py-2 text-center rounded bg-emerald-900 hover:bg-emerald-800 text-emerald-300 text-xs font-bold transition">
-                        🔗 Apri ZComm Dashboard ↗
-                    </a>
-                </div>
-            </div>
-
-            <div class="enterprise-box p-5 rounded-xl space-y-3">
-                <span class="text-xs font-bold text-cyan-400">WORKSPACE API</span>
-                <h3 class="text-sm font-bold text-white">Workspace e zFLOW</h3>
-                <p class="text-[11px] text-slate-400">Missioni persistenti, ruoli, registro eventi e console admin dipendenti da PostgreSQL.</p>
-            </div>
-
-            <div class="enterprise-box p-5 rounded-xl space-y-3">
-                <span class="text-xs font-bold text-amber-400">DSN WALLET</span>
-                <h3 class="text-sm font-bold text-white">DSN TokenAI</h3>
-                <p class="text-[11px] text-slate-400">Il Wallet include una prova locale SHA-256 per misurare il calcolo sul nodo.</p>
-            </div>
-
-            <div class="enterprise-box p-5 rounded-xl space-y-3 border-cyan-500/40">
-                <span class="text-xs font-bold text-cyan-400">AI GATEWAY · K.I.R.A.</span>
-                <h3 class="text-sm font-bold text-white">Assistente ZDOS</h3>
-                <p class="text-[11px] text-slate-400">Invia richieste al provider AI configurato sul backend. La pagina mostra se gateway e inferenza sono davvero disponibili.</p>
-                <button type="button" onclick="document.querySelector('.kira-launcher')?.click()" class="w-full py-2 rounded bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-bold transition">APRI K.I.R.A. →</button>
-            </div>
+        <div class="notice">
+          DSN, token e wallet non sono abilitati da questa directory. Non
+          inviare transazioni, non custodire chiavi e non attribuire valore ai
+          benchmark locali mostrati in altri repository.
         </div>
+      </section>
+
+      <section class="section" aria-labelledby="rules-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Regole d’integrazione</div>
+            <h2 id="rules-title">Confini prima dei collegamenti.</h2>
+          </div>
+        </div>
+        <div class="cards-2">
+          <article class="truth-card is">
+            <h3>Interfaccia e runtime sono distinti</h3>
+            <p>
+              Il codice di questa directory è statico. Le funzioni che
+              richiedono account, database, modelli AI o nodi devono essere
+              servite da API separate e documentate.
+            </p>
+          </article>
+          <article class="truth-card is-not">
+            <h3>Un link non prova un servizio</h3>
+            <p>
+              I link aprono repository sorgente. Lo stato operativo si mostra
+              solo con un controllo live del relativo endpoint; le capacità non
+              collegate restano marcate come sperimentali o separate.
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
 
-</body>
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <span>eNET · directory pubblica dei moduli ZDOS</span>
+        <div class="footer-links">
+          <a href="index.html">Portale</a><a href="ecosystem.html">Ecosistema</a
+          ><a href="privacy.html">Dati e AI</a
+          ><a
+            href="https://github.com/high-cde/x-zdos.it"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Codice sorgente</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

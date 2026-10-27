@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "portal": {
+    "id": "x-zdos.it",
+    "role": "public-portal-and-service-directory",
+    "maturity": "preview",
+    "repository": "https://github.com/high-cde/x-zdos.it"
+  },
+  "components": [
+    {
+      "id": "enet",
+      "role": "curated-service-directory",
+      "maturity": "catalog-only",
+      "repository": "https://github.com/high-cde/x-zdos.it"
+    },
+    {
+      "id": "zdos-kira",
+      "role": "ai-chat-api-gateway",
+      "maturity": "requires-https-and-provider-configuration",
+      "repository": "https://github.com/high-cde/Zdos-K.I.R.A",
+      "healthPath": "/health",
+      "generatePath": "/api/v1/zllm/generate"
+    },
+    {
+      "id": "zdos-os",
+      "role": "experimental-x86_64-operating-system",
+      "maturity": "experimental",
+      "repository": "https://github.com/high-cde/ZDOS"
+    },
+    {
+      "id": "zlang",
+      "role": "language-and-bytecode-toolkit",
+      "maturity": "in-development",
+      "repository": "https://github.com/high-cde/Zlang"
+    },
+    {
+      "id": "zcomm",
+      "role": "separate-communications-project",
+      "maturity": "not-live-verified-by-this-portal",
+      "repository": "https://github.com/high-cde/Zcomm"
+    },
+    {
+      "id": "zdos-webapp",
+      "role": "separate-web-application",
+      "maturity": "requires-its-own-server-oidc-and-database",
+      "repository": "https://github.com/high-cde/x-zdos-webapp"
+    },
+    {
+      "id": "zdos-organism",
+      "role": "separate-model-runtime",
+      "maturity": "not-integrated-with-this-portal",
+      "repository": "https://github.com/high-cde/zdos-organism"
+    }
+  ],
+  "nonGoals": [
+    "user-authentication-or-workspace-management",
+    "native-zlang-inference",
+    "remote-command-execution-or-security-scanning",
+    "dsntoken-issuance-or-custody",
+    "claiming-availability-without-a-live-health-check"
+  ]
+}

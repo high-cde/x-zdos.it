@@ -1,19 +1,27 @@
-# K.I.R.A nel template x-zdos.it
+# x-zdos.it — Portale ZDOS
 
-Il widget riutilizzabile è composto da `kira-widget.js` e `kira-widget.css` ed è incluso in `index.html` e `enet.html`. Il browser invia i prompt a `POST /api/v1/zllm/generate` e legge `GET /health`; il widget mostra distintamente gateway offline e provider AI non configurato. La chat resta in memoria della pagina e non salva la conversazione.
+Portale statico in italiano per orientarsi tra i repository ZDOS, la directory eNET e il backend AI K.I.R.A. Le pagine distinguono i servizi collegati dai progetti sperimentali. Non includono login, database, wallet o runtime ZLang.
 
-## Configurazione dell'origine API
+## Pagine e file
 
-Il backend deve essere esposto da un'origine HTTPS raggiungibile dal browser, preferibilmente tramite un reverse proxy TLS sul dominio del sito. Impostare il meta tag in entrambe le pagine, per esempio:
+- `index.html`: portale e stato del gateway.
+- `enet.html`: directory dei servizi, con collegamenti e livelli di maturità.
+- `ecosystem.html`, `ECOSYSTEM_SCOPE.md` e `ecosystem.json`: definizione leggibile e machine-readable dei confini del sistema.
+- `privacy.html`: nota tecnica sui dati e sull’invio dei prompt; non è un’informativa legale completa.
+- `site.css`, `site.js`, `kira-widget.js`: asset locali; nessun framework o font CDN richiesto.
 
-```html
-<meta name="zdos-kira-api-base" content="https://api.example.it">
+## Avvio locale
+
+```sh
+python3 -m http.server 8080
 ```
 
-Sostituire `https://api.example.it` con l'origine HTTPS effettivamente configurata; non inserire percorsi `/health` o `/api` nel valore. Lasciarlo vuoto usa l'origine corrente della pagina, utile quando il backend è servito sullo stesso host. Un endpoint HTTP remoto non è accettato dai browser su pagine HTTPS per il blocco mixed-content.
+Aprire `http://127.0.0.1:8080`. Senza API configurata, la UI mostra che il gateway non è collegato e disabilita l’invio; non produce risposte simulate.
 
-Il server deve consentire via CORS l'origine esatta del sito e fornire `GET /health` e `POST /api/v1/zllm/generate`. Il campo `inferenceConfigured` nella health response deve essere `true` solo quando il provider è configurato lato server.
+## Collegamento K.I.R.A.
 
-## Importante
+In entrambe le pagine impostare `<meta name="zdos-kira-api-base">` a un’origine HTTPS reale, ad esempio `https://api.example.it`. `same-origin` è ammesso quando reverse proxy e pagine condividono lo stesso host. Il valore vuoto lascia l’API disabilitata. Non configurare endpoint HTTP remoto: il browser bloccherebbe la chiamata da HTTPS.
 
-Questa integrazione non contiene né incorpora chiavi AI nel client. Il provider è invocato dal backend; finché l'origine HTTPS o la configurazione del provider manca, il widget segnala il problema e non inventa risposte. Proteggere il gateway con limiti e controlli adeguati prima dell'esposizione pubblica.
+Il server deve consentire l’origine esatta del portale via CORS e fornire `GET /health` e `POST /api/v1/zllm/generate`. Impostare `ZLLM_API_KEY` solo nel secret manager o nell’ambiente del backend, mai in questi file statici. `inferenceConfigured: true` prova la presenza della configurazione lato server, non sostituisce una richiesta d’inferenza di prova.
+
+Prima dell’esposizione pubblica completare la protezione del gateway, le quote, la configurazione TLS e l’informativa legale con i dati effettivi del gestore e del provider. Le pagine restano `noindex` durante la preview.

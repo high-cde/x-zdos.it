@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07100d" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Ruoli, dipendenze e limiti dichiarati per la parte web dell’ecosistema ZDOS."
+    />
+    <title>Ecosistema — x-zdos.it</title>
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="x-zdos.it, home"
+          ><span class="brand-mark">XZ</span
+          ><span>x-zdos.it<span class="brand-sub">PORTALE ZDOS</span></span></a
+        >
+        <nav class="nav" aria-label="Navigazione principale">
+          <a href="index.html">Portale</a><a href="enet.html">eNET</a
+          ><a href="ecosystem.html" aria-current="page">Ecosistema</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      <section class="hero" aria-labelledby="scope-title">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span> Definizione · perimetro web
+          </div>
+          <h1 id="scope-title">
+            Un ecosistema con <em>confini leggibili.</em>
+          </h1>
+          <p class="lead">
+            Questa pagina definisce la porzione web: un portale statico, una
+            directory eNET e un assistente K.I.R.A. basato su un backend
+            separato. Gli altri repository restano progetti autonomi finché un
+            contratto d’integrazione non dimostra il contrario.
+          </p>
+        </div>
+        <aside class="status-card">
+          <div class="eyebrow">Regola di stato</div>
+          <h2 style="margin-top: 12px">Nessun badge senza prova</h2>
+          <p class="muted small">
+            “Online” richiede un controllo live. “Sperimentale” indica che
+            codice e validazione non attestano un servizio pronto. Un link
+            GitHub prova solo che esiste una sorgente.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Mappa dei ruoli</div>
+            <h2>La porzione web in tre componenti.</h2>
+          </div>
+          <p>
+            Le chiamate AI passano dal browser al gateway HTTPS e da lì al
+            provider configurato sul server. Le pagine non contengono
+            credenziali.
+          </p>
+        </div>
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-kicker">01 · esperienza pubblica</div>
+            <h3>x-zdos.it</h3>
+            <p>
+              Contenuto statico, orientamento e accesso ai repository. Nessuna
+              sessione, account o persistenza utente.
+            </p>
+          </article>
+          <article class="card">
+            <div class="card-kicker">02 · catalogo</div>
+            <h3>eNET</h3>
+            <p>
+              Indice curato dei servizi e dei loro limiti. Non è una rete mesh e
+              non attiva automaticamente i moduli elencati.
+            </p>
+          </article>
+          <article class="card">
+            <div class="card-kicker">03 · servizio remoto</div>
+            <h3>ZDOS-K.I.R.A.</h3>
+            <p>
+              Backend per health e generazione AI OpenAI-compatible. Richiede
+              configurazione lato server, TLS, CORS e protezioni antiabuso.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Dipendenze esterne</div>
+            <h2>Progetti collegati, non confusi.</h2>
+          </div>
+        </div>
+        <div class="cards-2">
+          <article class="truth-card is">
+            <h3>ZDOS OS e ZLang</h3>
+            <p>
+              Repository distinti con ciclo di build e verifica propri. Non
+              vengono eseguiti nel browser e non forniscono inferenza nativa
+              attraverso questa chat.
+            </p>
+          </article>
+          <article class="truth-card is">
+            <h3>ZComm</h3>
+            <p>
+              Servizio e sorgente separati. Questa directory non avvia
+              conversazioni e non certifica cifratura o disponibilità.
+            </p>
+          </article>
+          <article class="truth-card is">
+            <h3>ZDOS Web App</h3>
+            <p>
+              Applicazione distinta con server, OIDC e database. Nessun login o
+              workspace è condiviso con il portale statico.
+            </p>
+          </article>
+          <article class="truth-card is-not">
+            <h3>Token, wallet e scansioni</h3>
+            <p>
+              Fuori perimetro. Il sito non emette/custodisce DSN, non esegue
+              transazioni e non avvia scansioni di sicurezza o comandi remoti.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Contratto minimo</div>
+            <h2>Come si collega K.I.R.A.</h2>
+          </div>
+        </div>
+        <article class="card">
+          <p>
+            <strong>Health:</strong> <code>GET /health</code> deve rispondere
+            via HTTPS. Il campo <code>inferenceConfigured</code> segnala la
+            configurazione lato server, non l’esito di un’inferenza.
+          </p>
+          <p style="margin-top: 12px">
+            <strong>Generazione:</strong>
+            <code>POST /api/v1/zllm/generate</code> riceve un prompt testuale,
+            limitato a 8000 caratteri. Il backend chiama il provider; la chiave
+            <code>ZLLM_API_KEY</code> resta nell’ambiente server.
+          </p>
+          <p style="margin-top: 12px">
+            <strong>Configurazione del browser:</strong> l’origine si imposta
+            nel meta <code>zdos-kira-api-base</code>. Il valore vuoto disabilita
+            la chat; il sito non usa endpoint HTTP remoto né invia prompt senza
+            una base sicura.
+          </p>
+        </article>
+        <div class="actions">
+          <a class="button button-quiet" href="ecosystem.json"
+            >Scarica il manifest JSON</a
+          ><a class="button button-quiet" href="ECOSYSTEM_SCOPE.md"
+            >Leggi la specifica Markdown</a
+          ><a class="button button-primary" href="privacy.html">Dati e AI</a>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <span>x-zdos.it · definizione del perimetro web</span>
+        <div class="footer-links">
+          <a href="index.html">Portale</a><a href="enet.html">eNET</a
+          ><a href="privacy.html">Dati e AI</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
